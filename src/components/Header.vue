@@ -2,8 +2,8 @@
   <header class="header">
     <h1>Tab Finder</h1>
     <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>|
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
       <router-link to="/profile">Profile</router-link>
     </div>
   </header>
