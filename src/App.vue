@@ -3,8 +3,6 @@
     <Header />
     <SideBar />
     <router-view />
-
-    <h2>hey</h2>
   </div>
 </template>
 

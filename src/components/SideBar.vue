@@ -1,11 +1,21 @@
 <template>
   <div class="sidebar">
     <span>Choose your chords here</span>
-    <ul href="#">C</ul>
-    <ul href="#">D</ul>
-    <ul href="#">E</ul>
-    <ul href="#">F</ul>
-    <ul href="#">G</ul>
+    <ul href="#">
+      C
+    </ul>
+    <ul href="#">
+      D
+    </ul>
+    <ul href="#">
+      E
+    </ul>
+    <ul href="#">
+      F
+    </ul>
+    <ul href="#">
+      G
+    </ul>
   </div>
 </template>
 
