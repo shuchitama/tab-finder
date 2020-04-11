@@ -6,6 +6,7 @@
       <router-link to="/profile">Profile</router-link>
     </div>
     <router-view />
+    <h2>hey</h2>
   </div>
 </template>
 
