@@ -43,7 +43,6 @@ export default {
   font-size: 15px;
   color: #818181;
   display: block;
-
 }
 .sidebar ul:hover {
   color: blueviolet;
