@@ -1,29 +1,46 @@
 <template>
   <div class="sidebar">
     <span>Choose your chords here</span>
-    <ul href="#">
-      C
-    </ul>
-    <ul href="#">
-      D
-    </ul>
-    <ul href="#">
-      E
-    </ul>
-    <ul href="#">
-      F
-    </ul>
-    <ul href="#">
-      G
-    </ul>
+    <Chords v-bind:chords="chords" />
   </div>
 </template>
 
 <script>
+import Chords from "./Chords.vue";
 export default {
   name: "SideBar",
-  props: {
-    msg: String
+  components: {
+    Chords
+  },
+  data() {
+    return {
+      chords: [
+        { id: 1, name: "A" },
+        { id: 2, name: "Am" },
+        { id: 3, name: "A#" },
+        { id: 4, name: "A#m" },
+        { id: 5, name: "B" },
+        { id: 6, name: "Bm" },
+        { id: 7, name: "C" },
+        { id: 8, name: "Cm" },
+        { id: 9, name: "C#" },
+        { id: 10, name: "C#m" },
+        { id: 11, name: "D" },
+        { id: 12, name: "Dm" },
+        { id: 13, name: "D#" },
+        { id: 14, name: "D#m" },
+        { id: 15, name: "E" },
+        { id: 16, name: "Em" },
+        { id: 17, name: "F" },
+        { id: 18, name: "Fm" },
+        { id: 19, name: "F#" },
+        { id: 20, name: "F#m" },
+        { id: 21, name: "G" },
+        { id: 22, name: "Gm" },
+        { id: 23, name: "G#" },
+        { id: 24, name: "G#m" }
+      ]
+    };
   }
 };
 </script>
@@ -34,18 +51,8 @@ export default {
   width: 20%;
   height: 100%;
   position: fixed;
-  background-color: blue;
+  background-color: white;
   z-index: inherit;
-}
-.sidebar ul {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 15px;
-  color: #818181;
-  display: block;
-}
-.sidebar ul:hover {
-  color: blueviolet;
 }
 span {
   color: red;
