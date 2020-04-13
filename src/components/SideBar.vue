@@ -6,6 +6,7 @@
 
 <script>
 import Chords from "./Chords.vue";
+import axios from "axios";
 export default {
   name: "SideBar",
   components: {
@@ -13,33 +14,14 @@ export default {
   },
   data() {
     return {
-      chords: [
-        { id: 1, name: "A" },
-        { id: 2, name: "Am" },
-        { id: 3, name: "A#" },
-        { id: 4, name: "A#m" },
-        { id: 5, name: "B" },
-        { id: 6, name: "Bm" },
-        { id: 7, name: "C" },
-        { id: 8, name: "Cm" },
-        { id: 9, name: "C#" },
-        { id: 10, name: "C#m" },
-        { id: 11, name: "D" },
-        { id: 12, name: "Dm" },
-        { id: 13, name: "D#" },
-        { id: 14, name: "D#m" },
-        { id: 15, name: "E" },
-        { id: 16, name: "Em" },
-        { id: 17, name: "F" },
-        { id: 18, name: "Fm" },
-        { id: 19, name: "F#" },
-        { id: 20, name: "F#m" },
-        { id: 21, name: "G" },
-        { id: 22, name: "Gm" },
-        { id: 23, name: "G#" },
-        { id: 24, name: "G#m" }
-      ]
+      chords: []
     };
+  },
+  created() {
+    axios.get("http://localhost:3001/api/chords").then(res => {
+      console.log(res);
+      this.chords = res.data;
+    });
   }
 };
 </script>
