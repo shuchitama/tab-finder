@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import Home from "../views/Home.vue";
 import Profile from "../views/Profile.vue";
 

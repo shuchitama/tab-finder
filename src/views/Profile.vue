@@ -9,6 +9,7 @@
 import axios from "axios";
 import VueAxios from "vue-axios";
 import Vue from "vue";
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 Vue.use(VueAxios, axios);
 
 export default {
