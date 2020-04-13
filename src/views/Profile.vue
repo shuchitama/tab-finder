@@ -19,8 +19,8 @@ export default {
   },
   created() {
     axios
-      .get("https://api.kanye.rest/")
-      .then(response => (this.info = response.data.quote));
+      .get("http://localhost:8001/api/songs")
+      .then(response => (this.info = response.data[2].name));
   }
 };
 </script>
