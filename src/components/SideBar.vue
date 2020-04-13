@@ -1,6 +1,5 @@
 <template>
   <div class="sidebar">
-    <span>Choose your chords here</span>
     <Chords v-bind:chords="chords" />
   </div>
 </template>
