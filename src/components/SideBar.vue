@@ -28,10 +28,9 @@ export default {
 
 <style scoped>
 .sidebar {
-  /* display: flex; */
-  width: 20%;
+  width: 40%;
   height: 100%;
-  position: fixed;
+  overflow-y: scroll;
   background-color: white;
   z-index: inherit;
 }
