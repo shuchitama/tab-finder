@@ -4,6 +4,7 @@
       <div class="grid">
         <button
           class="chord"
+          v-bind:class="{ active: isActive(chord.id) }"
           @click="addChord(chord.id)"
           v-bind:key="chord.id"
           v-for="chord in chords"
@@ -62,6 +63,10 @@ export default {
       const selectedChordIDs = [];
       selectedChordsObj.map(element => selectedChordIDs.push(element.id));
       return selectedChordIDs;
+    },
+    isActive(id) {
+      const chord = this.selectChords.find(element => element.id === id);
+      return chord.selected;
     }
   }
 };
@@ -86,7 +91,7 @@ export default {
   background-color: forestgreen;
 }
 
-.chord:active {
+.active {
   background-color: greenyellow;
 }
 </style>
