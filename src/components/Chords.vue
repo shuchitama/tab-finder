@@ -4,7 +4,7 @@
       <div class="grid">
         <button
           class="chord"
-          @click="addChord"
+          @click="addChord(chord.id)"
           v-bind:key="chord.id"
           v-for="chord in chords"
         >{{chord.name}}</button>
@@ -12,6 +12,7 @@
       <br />
       <b-button class="submit" block>Let's get some songs!</b-button>
     </b-card>
+    <div>{{showChords()}}</div>
   </section>
 </template>
 
@@ -21,7 +22,7 @@ export default {
   props: ["chords"],
   data() {
     return {
-      selectedChords: [
+      selectChords: [
         { id: 1, selected: false },
         { id: 2, selected: false },
         { id: 3, selected: false },
@@ -50,7 +51,18 @@ export default {
     };
   },
   methods: {
-    addChord() {}
+    addChord(id) {
+      const chord = this.selectChords.find(element => element.id === id);
+      chord.selected = !chord.selected;
+    },
+    showChords() {
+      const selectedChordsObj = this.selectChords.filter(
+        element => element.selected === true
+      );
+      const selectedChordIDs = [];
+      selectedChordsObj.map(element => selectedChordIDs.push(element.id));
+      return selectedChordIDs;
+    }
   }
 };
 </script>
@@ -71,6 +83,10 @@ export default {
   width: 50px;
   padding: 2% 5%;
   margin: 2% 2%;
-  background-color: coral;
+  background-color: forestgreen;
+}
+
+.chord:active {
+  background-color: greenyellow;
 }
 </style>
