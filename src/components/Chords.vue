@@ -2,7 +2,9 @@
   <section>
     <b-card header="CHOOSE CHORDS TO GET STARTED!">
       <div class="grid">
-        <button class="chord" v-bind:key="chord.id" v-for="chord in chords">{{chord.name}}</button>
+        <button class="chord" v-bind:key="chord.id" v-for="chord in chords">
+          {{ chord.name }}
+        </button>
         <!-- <b-form-checkbox
           button
           buttonclass="chord"
@@ -11,7 +13,7 @@
         >{{chord.name}}</b-form-checkbox>-->
       </div>
       <br />
-      <b-button class="submit" block>Lets Get Some Songs!</b-button>
+      <b-button class="submit" block>Let's get some songs!</b-button>
     </b-card>
   </section>
 </template>

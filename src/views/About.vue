@@ -1,7 +1,8 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <h2>"{{ info }}"</h2>
+    <h1>About us</h1>
+    <p>This app was created by Mariana Dominguez and Shuchita Mahey.</p>
+    <p>I hope all you beginners out there have fun!</p>
   </div>
 </template>
 
@@ -10,7 +11,7 @@
 
 <style scoped>
 .about {
-  margin-left: 20%;
+  margin-left: 30%;
   background-color: aquamarine;
 }
 </style>
