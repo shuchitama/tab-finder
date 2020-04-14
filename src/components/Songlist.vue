@@ -19,13 +19,11 @@ export default {
     };
   },
   created() {
-    axios.get("http://localhost:3001/api/songs").then(res => {
+    axios.get("http://localhost:3001/api/songs")
+    .then(res => {
       console.log(res);
       this.songs = res.data;
-    }),
-      axios.get("http://localhost:3001/api/songchords").then(res => {
-        this.songchords = res.data;
-      });
+    });
   }
 };
 </script>

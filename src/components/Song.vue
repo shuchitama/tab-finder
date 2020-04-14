@@ -17,12 +17,8 @@
         </div>
       </td>
       <td>
-        <div
-          class="chords"
-          v-bind:key="songchord.id"
-          v-for="songchord in songchords"
-        >
-          song id: {{ songchord.song_id }} / chord id: {{ songchord.chord_id }}
+        <div class="chords" v-bind:key="song.id" v-for="song in songs">
+          {{ song.chords }}
         </div>
       </td>
     </tr>
