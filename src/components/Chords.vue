@@ -1,17 +1,16 @@
 <template>
   <section>
-    <b-card header="CHOOSE CHORDS TO GET STARTED!">
+    <b-card header="CHOOSE CHORDS TO GET STARTED">
       <div class="grid">
-        <button class="chord" v-bind:key="chord.id" v-for="chord in chords">{{chord.name}}</button>
-        <!-- <b-form-checkbox
-          button
-          buttonclass="chord"
+        <button
+          class="chord"
+          @click="addChord"
           v-bind:key="chord.id"
           v-for="chord in chords"
-        >{{chord.name}}</b-form-checkbox>-->
+        >{{chord.name}}</button>
       </div>
       <br />
-      <b-button class="submit" block>Lets Get Some Songs!</b-button>
+      <b-button class="submit" block>Let's Get Some Songs!</b-button>
     </b-card>
   </section>
 </template>
@@ -19,17 +18,51 @@
 <script>
 export default {
   name: "Chords",
-  props: ["chords"]
+  props: ["chords"],
+  data() {
+    return {
+      selectedChords: [
+        { id: 1, selected: false },
+        { id: 2, selected: false },
+        { id: 3, selected: false },
+        { id: 4, selected: false },
+        { id: 5, selected: false },
+        { id: 6, selected: false },
+        { id: 7, selected: false },
+        { id: 8, selected: false },
+        { id: 9, selected: false },
+        { id: 10, selected: false },
+        { id: 11, selected: false },
+        { id: 12, selected: false },
+        { id: 13, selected: false },
+        { id: 14, selected: false },
+        { id: 15, selected: false },
+        { id: 16, selected: false },
+        { id: 17, selected: false },
+        { id: 18, selected: false },
+        { id: 19, selected: false },
+        { id: 20, selected: false },
+        { id: 21, selected: false },
+        { id: 22, selected: false },
+        { id: 23, selected: false },
+        { id: 24, selected: false }
+      ]
+    };
+  },
+  methods: {
+    addChord() {}
+  }
 };
 </script>
 
 <style scoped>
 .grid {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
   grid-template-rows: auto;
-  column-gap: 5px;
-  row-gap: 5px;
+  column-gap: 10px;
+  row-gap: 10px;
 }
 
 .chord {
