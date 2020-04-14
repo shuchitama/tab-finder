@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
     <h2>This is the Profile page!</h2>
-    <p>{{ info }}</p>
+    <p>My favorite songs are: {{ info }}</p>
   </div>
 </template>
 
@@ -19,8 +19,8 @@ export default {
   },
   created() {
     axios
-      .get("http://localhost:8001/api/songs")
-      .then(response => (this.info = response.data[2].name));
+      .get("http://localhost:3001/api/songs")
+      .then(response => (this.info = response.data[2].title));
   }
 };
 </script>

@@ -10,7 +10,7 @@
         >{{chord.name}}</button>
       </div>
       <br />
-      <b-button class="submit" block>Let's Get Some Songs!</b-button>
+      <b-button class="submit" block>Let's get some songs!</b-button>
     </b-card>
   </section>
 </template>
