@@ -2,12 +2,16 @@
   <section>
     <b-card header="CHOOSE CHORDS TO GET STARTED!">
       <div class="grid">
-        <button v-bind:key="chord.id" v-for="chord in chords">{{chord.name}}</button>
-        <!-- <b-form-checkbox button>{{chord.name}}</b-form-checkbox> -->
+        <button class="chord" v-bind:key="chord.id" v-for="chord in chords">{{chord.name}}</button>
+        <!-- <b-form-checkbox
+          button
+          buttonclass="chord"
+          v-bind:key="chord.id"
+          v-for="chord in chords"
+        >{{chord.name}}</b-form-checkbox>-->
       </div>
       <br />
-      <br />
-      <b-button block>Lets Get Some Songs!</b-button>
+      <b-button class="submit" block>Lets Get Some Songs!</b-button>
     </b-card>
   </section>
 </template>
@@ -20,13 +24,7 @@ export default {
 </script>
 
 <style scoped>
-/* section {
-  display: flex;
-  flex-direction: column;
-} */
-
 .grid {
-  background-color: turquoise;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: auto;
@@ -34,10 +32,12 @@ export default {
   row-gap: 5px;
 }
 
-button {
+.chord {
+  border-radius: 4px;
+  border: black;
   width: 50px;
   padding: 2% 5%;
   margin: 2% 2%;
-  background-color: teal;
+  background-color: coral;
 }
 </style>

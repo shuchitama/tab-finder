@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 .sidebar {
-  width: 40%;
+  width: 35%;
   height: 100%;
   overflow-y: scroll;
   background-color: white;
