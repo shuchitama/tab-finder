@@ -28,11 +28,10 @@ export default {
 
 <style scoped>
 .sidebar {
-  width: 25%;
-  height: 100%;
+  width: 100%;
+  height: 20%;
   overflow-y: scroll;
   background-color: white;
-  z-index: inherit;
 }
 span {
   color: red;
