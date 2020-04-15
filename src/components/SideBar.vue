@@ -30,10 +30,6 @@ export default {
 .sidebar {
   width: 100%;
   height: 20%;
-  overflow-y: scroll;
   background-color: white;
-}
-span {
-  color: red;
 }
 </style>
