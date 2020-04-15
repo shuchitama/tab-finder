@@ -11,7 +11,7 @@
         >{{chord.name}}</button>
       </div>
       <br />
-      <b-button class="submit" block>Let's get some songs!</b-button>
+      <b-button class="submit">Let's get some songs!</b-button>
     </b-card>
     <div>{{showChords()}}</div>
   </section>
@@ -76,8 +76,8 @@ export default {
 .grid {
   display: grid;
   justify-content: center;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-rows: auto auto;
   column-gap: 10px;
   row-gap: 10px;
 }
