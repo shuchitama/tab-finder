@@ -10,7 +10,7 @@
             {{ song.artist }}
           </div>
           <div class="chords">
-            Chords: {{ song.chords }}
+            Chords: {{ song.chords.join(", ") }}
           </div>
         </section>
         <section class="buttons">
