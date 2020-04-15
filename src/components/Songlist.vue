@@ -1,6 +1,6 @@
 <template>
   <table class="songlist">
-    <Song v-bind:songs="songs" v-bind:songchords="songchords" />
+    <Song v-bind:songs="songs" />
   </table>
 </template>
 
@@ -15,7 +15,6 @@ export default {
   data() {
     return {
       songs: [],
-      songchords: []
     };
   },
   created() {

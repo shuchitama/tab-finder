@@ -28,7 +28,7 @@
 <script>
 export default {
   name: "song",
-  props: ["songs", "songchords"]
+  props: ["songs"]
 };
 </script>
 
