@@ -1,5 +1,6 @@
 <template>
   <table class="songlist">
+    <header> Your results: </header>
     <Song v-bind:songs="songs" />
   </table>
 </template>
@@ -29,7 +30,7 @@ export default {
 
 <style scoped>
 .songlist {
-  color: black;
-  background-color: blueviolet;
+  align-self: center;
+  margin: auto;
 }
 </style>

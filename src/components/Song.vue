@@ -1,28 +1,25 @@
 <template>
-  <div class="song">
-    <tr>
-      <th>Artist</th>
-      <th>Song</th>
-      <th>Chords</th>
-    </tr>
-    <tr>
-      <td>
-        <div class="artist" v-bind:key="song.id" v-for="song in songs">
-          {{ song.artist }}
-        </div>
-      </td>
-      <td>
-        <div class="title" v-bind:key="song.id" v-for="song in songs">
-          {{ song.title }}
-        </div>
-      </td>
-      <td>
-        <div class="chords" v-bind:key="song.id" v-for="song in songs">
-          {{ song.chords }}
-        </div>
-      </td>
-    </tr>
-  </div>
+  <article>
+    <div class="song" v-bind:key="song.id" v-for="song in songs">
+      <div class="song-item">
+        <section class="song-info">
+          <header class="title">
+            {{ song.title }}
+          </header>
+          <div class="artist">
+            {{ song.artist }}
+          </div>
+          <div class="chords">
+            Chords: {{ song.chords }}
+          </div>
+        </section>
+        <section class="buttons">
+          <button>Favourite</button>
+          <button>Percent match</button>
+        </section>
+      </div>
+    </div>
+  </article>
 </template>
 
 <script>
@@ -34,11 +31,29 @@ export default {
 
 <style scoped>
 .song {
-  color: black;
-  background-color:darkgrey ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  border: solid;
+  border-radius: 8px;
+  top: 50px;
+  margin: 20px;
+  background-color: darkseagreen;
+}
+.song-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
 }
 .title {
   color:black;
+  font-weight: bold;
 }
 .artist {
   font-style: italic;
