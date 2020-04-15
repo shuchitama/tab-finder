@@ -11,7 +11,9 @@
         >{{chord.name}}</button>
       </div>
       <br />
-      <b-button class="submit">Let's get some songs!</b-button>
+      <b-button 
+      @click="submitChords"
+      class="submit">Let's get some songs!</b-button>
     </b-card>
     <div>{{showChords()}}</div>
   </section>
@@ -67,7 +69,11 @@ export default {
     isActive(id) {
       const chord = this.selectChords.find(element => element.id === id);
       return chord.selected;
-    }
+    },
+    submitChords() {
+      console.log("callback fired!")
+      this.$emit('chords-submitted', this.showChords())
+      }
   }
 };
 </script>
