@@ -33,17 +33,17 @@ export default {
 </script>
 
 <style scoped>
-.songlist {
+.song {
   color: black;
-  background-color: blueviolet;
+  background-color:darkgrey ;
 }
 .title {
-  color: red;
+  color:black;
 }
 .artist {
   font-style: italic;
 }
 .chords {
-  color: blue;
+  color: black;
 }
 </style>
