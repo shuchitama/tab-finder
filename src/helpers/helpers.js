@@ -8,9 +8,8 @@ const chordIDtoName = function (chordList, arrOfIDs) {
 }
 
 const filtersongs = function (songsObj, arrOfIDs) {
-  
   const arrOfNames = chordIDtoName(chords, arrOfIDs)
   return songsObj.filter(song => _.isEqual(song.chords.sort(), arrOfNames.sort()))
 };
 
-console.log(filtersongs(songs, selectedChords))
+modules.export = {chordIDtoName, filtersongs};
