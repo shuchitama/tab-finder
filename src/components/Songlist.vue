@@ -16,6 +16,13 @@ export default {
     Song
   },
   props: ["chordIDs"],
+  watch: {
+    "chordIDs": function() {
+      console.log("fired!");
+      const arrOfNames = this.chordIDtoName(this.AllChords, this.$props.chordIDs)
+      this.filteredSongs = this.AllSongs.filter(song => _.isEqual(song.chords.sort(), arrOfNames.sort()))
+    }
+  },
   data() {
     return {
       AllChords:[],
@@ -33,16 +40,17 @@ export default {
   },
   methods: {
     chordIDtoName(chordList, arrOfIDs) {
+      console.log('chordsIDtoName fired')
     return arrOfIDs.map (id => {
       const chord = chordList.find(element => element.id === id);
       return chord.name;
       })
-    },
-    filtersongs() {
-      console.log("fired!")
-      const arrOfNames = this.chordIDtoName(this.AllChords, this.$props.chordIDs)
-      this.filteredSongs = this.AllSongs.filter(song => _.isEqual(song.chords.sort(), arrOfNames.sort()))
     }
+    // filtersongs() {
+    //   console.log("fired!")
+    //   const arrOfNames = this.chordIDtoName(this.AllChords, this.$props.chordIDs)
+    //   this.filteredSongs = this.AllSongs.filter(song => _.isEqual(song.chords.sort(), arrOfNames.sort()))
+    // }
     // searchResults() {
     //   this.filteredSongs = [1, 2, 3]
     //   filtersongs(this.AllSongs, this.$props.chordIDs);
