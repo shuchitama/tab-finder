@@ -71,7 +71,6 @@ export default {
       return chord.selected;
     },
     submitChords() {
-      console.log("callback fired!")
       this.$emit('chords-submitted', this.showChords())
       }
   }
