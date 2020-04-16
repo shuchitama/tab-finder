@@ -1,6 +1,6 @@
 <template>
   <article>
-    <div class="song" v-bind:key="song.id" v-for="song in songs">
+    <div class="song" v-bind:key="song.id" v-for="song in filteredSongs">
       <div class="song-item">
         <section class="song-info">
           <header class="title">
@@ -25,7 +25,7 @@
 <script>
 export default {
   name: "song",
-  props: ["songs"]
+  props: ["filteredSongs"]
 };
 </script>
 
