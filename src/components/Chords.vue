@@ -11,16 +11,18 @@
         >{{chord.name}}</button>
       </div>
       <br />
-      <b-button-group>
+      <div>
         <b-button 
         @click="submitChords"
-        class="submit">
+        class="submit button">
         Let's get some songs!
         </b-button>
-        <b-button @click="clearChords">
+        <b-button 
+          class="clear button" 
+          @click="clearChords">
           Clear selection
         </b-button>
-      </b-button-group>
+      </div>
     </b-card>
   </section>
 </template>
@@ -107,5 +109,9 @@ export default {
 
 .active {
   background-color: greenyellow;
+}
+
+.button {
+  padding: 4px;
 }
 </style>
