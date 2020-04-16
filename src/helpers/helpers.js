@@ -1,15 +1,17 @@
 const _ = require('lodash');
 
-const chordIDtoName = function (chordList, arrOfIDs) {
-  return arrOfIDs.map (id => {
-    const chord = chordList.find(element => element.id === id);
-    return chord.name;
-  })
-}
+export const mixin = { 
+  methods: {
+  chordIDtoName(chordList, arrOfIDs) {
+    return arrOfIDs.map (id => {
+      const chord = chordList.find(element => element.id === id);
+      return chord.name;
+    })
+  },
 
-const filtersongs = function (songsObj, arrOfIDs) {
-  const arrOfNames = chordIDtoName(chords, arrOfIDs)
-  return songsObj.filter(song => _.isEqual(song.chords.sort(), arrOfNames.sort()))
+    filtersongs(songsObj, arrOfIDs) {
+      const arrOfNames = chordIDtoName(chords, arrOfIDs)
+      return songsObj.filter(song => _.isEqual(song.chords.sort(), arrOfNames.sort()))
+    }
+  }
 };
-
-modules.export = {chordIDtoName, filtersongs};
