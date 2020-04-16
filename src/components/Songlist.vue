@@ -18,7 +18,7 @@ export default {
   watch: {
     "chordIDs": function() {
       const arrOfNames = this.chordIDtoName(this.AllChords, this.$props.chordIDs)
-      this.filteredSongs = this.AllSongs.filter(song => _.isEqual(song.chords.sort(), arrOfNames.sort()))
+      this.filteredSongs = this.AllSongs.filter(song => arrOfNames.length === (_.uniq(_.concat(song.chords, arrOfNames)).length))
     }
   },
   data() {
