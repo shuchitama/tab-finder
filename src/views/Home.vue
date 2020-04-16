@@ -3,7 +3,48 @@
     <Header />
     <SideBar v-on:chords-submitted="passChordsToSongList"/>
     <br />
-    <div><b class="login">Login</b> to create a list with your favourite songs</div>
+    <div>
+      <b class="login" v-b-modal.modal-prevent-closing>Login</b>
+       to create a list with your favourite songs
+    </div>
+    <b-modal
+      id="modal-prevent-closing"
+      ref="modal"
+      title="Login"
+      @show="resetModal"
+      @hidden="resetModal"
+      @ok="handleOk"
+    >
+      <form ref="form" @submit.stop.prevent="handleSubmit">
+        <b-form-group
+          :state="nameState"
+          label="Name"
+          label-for="name-input"
+          invalid-feedback="Name is required"
+        >
+          <b-form-input
+            id="name-input"
+            v-model="name"
+            :state="nameState"
+            required
+          ></b-form-input>
+        </b-form-group>
+          <b-form-group
+          :state="passwordState"
+          label="Password"
+          label-for="password-input"
+          invalid-feedback="Password is required"
+        >
+          <b-form-input
+            id="password-input"
+            v-model="password"
+            :state="passwordState"
+            required
+          ></b-form-input>
+        </b-form-group>
+      </form>
+    </b-modal>
+
     <br />
     <Songlist v-bind:chordIDs="chordIDs"/>
   </div>
