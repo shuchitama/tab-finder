@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       chordIDs: [],
-      topten: [25, 3, 4, 5, 7, 21, 24]
+      topten: [2, 3, 4, 6, 9, 10, 20]
     };
   },
   methods: {

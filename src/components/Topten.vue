@@ -1,27 +1,30 @@
 <template>
   <div class="topten">
-    <tr>
-      <th>Artist</th>
-      <th>Song</th>
-      <th>Chords</th>
-    </tr>
-    <tr>
-      <td>
-        <div class="artist" v-bind:key="song.id" v-for="song in TopTenSongs">
-          {{ song.artist }}
-        </div>
-      </td>
-      <td>
-        <div class="title" v-bind:key="song.id" v-for="song in TopTenSongs">
-          {{ song.title }}
-        </div>
-      </td>
-      <td>
-        <div class="chords" v-bind:key="song.id" v-for="song in TopTenSongs">
-          {{ song.chords }}
-        </div>
-      </td>
-    </tr>
+    <h3>MOST SEARCHED SONGS:</h3>
+    <table>
+      <tr>
+        <th>Song</th>
+        <th>Artist</th>
+        <th>Chords</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="title" v-bind:key="song.id" v-for="song in TopTenSongs">
+            <a v-bind:href="'https://www.ultimate-guitar.com/search.php?search_type=title&value='+song.title+''" target="_blank">{{ song.title }}</a>
+          </div>
+        </td>
+        <td>
+          <div class="artist" v-bind:key="song.id" v-for="song in TopTenSongs">
+            {{ song.artist }}
+          </div>
+        </td>
+        <td>
+          <div class="chords" v-bind:key="song.id" v-for="song in TopTenSongs">
+            {{ song.chords.join(", ") }}
+          </div>
+        </td>
+      </tr>
+    </table>
   </div>
 </template>
 
@@ -46,9 +49,15 @@ export default {
 </script>
 
 <style scoped>
-.songlist {
-  color: black;
-  background-color: blueviolet;
+.topten {
+  margin: 5%;
+}
+table {
+  margin: 0 auto;
+  background-color: aquamarine;
+}
+tr {
+  margin: 10px;
 }
 .title {
   color: red;
