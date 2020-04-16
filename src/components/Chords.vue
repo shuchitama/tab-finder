@@ -22,7 +22,6 @@
         </b-button>
       </b-button-group>
     </b-card>
-    <div>{{showChords()}}</div>
   </section>
 </template>
 

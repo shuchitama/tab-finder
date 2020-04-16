@@ -1,9 +1,8 @@
 <template>
-  <table class="songlist">
+  <section class="songlist">
     <header>Your results:</header>
     <Song v-bind:filteredSongs="filteredSongs" />
-    <div>from SongList:</div>
-  </table>
+  </section>
 </template>
 
 <script>
@@ -52,5 +51,7 @@ export default {
 .songlist {
   align-self: center;
   margin: auto;
+  border: solid;
+  width: 50%;
 }
 </style>
