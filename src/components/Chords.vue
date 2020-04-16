@@ -11,11 +11,17 @@
         >{{chord.name}}</button>
       </div>
       <br />
-      <b-button 
-      @click="submitChords"
-      class="submit">Let's get some songs!</b-button>
+      <b-button-group>
+        <b-button 
+        @click="submitChords"
+        class="submit">
+        Let's get some songs!
+        </b-button>
+        <b-button @click="clearChords">
+          Clear selection
+        </b-button>
+      </b-button-group>
     </b-card>
-    <div>{{showChords()}}</div>
   </section>
 </template>
 
@@ -72,7 +78,10 @@ export default {
     },
     submitChords() {
       this.$emit('chords-submitted', this.showChords())
-      }
+    },
+    clearChords() {
+      this.selectChords.forEach(element => {element.selected = false})
+    }
   }
 };
 </script>
