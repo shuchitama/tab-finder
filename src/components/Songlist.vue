@@ -2,14 +2,15 @@
   <table class="songlist">
     <header>Your results:</header>
     <Song v-bind:filteredSongs="filteredSongs" />
-    <div>from SongList:</div>
+    <div>chordsIDs: {{ chordIDs }}</div>
   </table>
 </template>
 
 <script>
 import axios from "axios";
 import Song from "./Song.vue";
-import _ from 'lodash'
+import _ from "lodash";
+
 export default {
   name: "songlist",
   components: {
@@ -25,7 +26,7 @@ export default {
   },
   data() {
     return {
-      AllChords:[],
+      AllChords: [],
       AllSongs: [],
       filteredSongs: []
     };
