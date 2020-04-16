@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <Chords v-bind:chords="chords" />
+    <Chords v-bind:chords="chords" v-on:chords-submitted="passToParent"/>
   </div>
 </template>
 
@@ -19,9 +19,13 @@ export default {
   },
   created() {
     axios.get("http://localhost:3001/api/chords").then(res => {
-      console.log(res);
       this.chords = res.data;
     });
+  },
+  methods: {
+    passToParent(payload) {
+      this.$emit('chords-submitted', payload)
+    }
   }
 };
 </script>
