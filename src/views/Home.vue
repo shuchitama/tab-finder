@@ -2,7 +2,7 @@
   <div class="home">
     <Header />
     <SideBar v-on:chords-submitted="passChordsToSongList"/>
-    <Songlist v-bind:sendToSongList="sendToSongList"/>
+    <Songlist v-bind:chordIDs="chordIDs"/>
   </div>
 </template>
 
@@ -18,12 +18,12 @@ export default {
   },
   data () {
     return {
-      sendToSongList: []
+      chordIDs: []
     }
   },
   methods: {
     passChordsToSongList(chordIDArr) {
-      this.sendToSongList = chordIDArr
+      this.chordIDs = chordIDArr
     }
   }
 };
