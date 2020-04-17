@@ -29,12 +29,12 @@ export default {
 
 <style scoped>
 .about {
-  margin-left: 20%;
   background-color: aquamarine;
 }
 #grid {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   color: red;
 }
