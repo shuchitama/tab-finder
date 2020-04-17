@@ -7,6 +7,8 @@
 
     <br />
     <Songlist v-bind:chordIDs="chordIDs"/>
+    <br />
+    <Topten v-bind:topten="topten" />
   </div>
 </template>
 
@@ -14,22 +16,25 @@
 import Songlist from "@/components/Songlist.vue";
 import SideBar from "@/components/SideBar.vue";
 import Login from "@/components/Login.vue";
+import Topten from "@/components/Topten.vue";
 
 export default {
   name: "Home",
   components: {
     Songlist,
     SideBar,
-    Login
+    Login,
+    Topten
   },
-  data () {
+  data() {
     return {
-      chordIDs: []
-    }
+      chordIDs: [],
+      topten: [2, 3, 4, 6, 9, 10, 20]
+    };
   },
   methods: {
     passChordsToSongList(chordIDArr) {
-      this.chordIDs = chordIDArr
+      this.chordIDs = chordIDArr;
     }
   }
 };

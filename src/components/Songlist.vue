@@ -8,7 +8,8 @@
 <script>
 import axios from "axios";
 import Song from "./Song.vue";
-import _ from 'lodash'
+import _ from "lodash";
+
 export default {
   name: "songlist",
   components: {
@@ -23,7 +24,7 @@ export default {
   },
   data() {
     return {
-      AllChords:[],
+      AllChords: [],
       AllSongs: [],
       filteredSongs: []
     };
