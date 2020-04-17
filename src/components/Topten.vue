@@ -10,7 +10,7 @@
       <tr>
         <td>
           <div class="title" v-bind:key="song.id" v-for="song in TopTenSongs">
-            <a v-bind:href="''+song.url+''" target="_blank">{{ song.title }}</a> 
+            <a v-bind:href="song.url" target="_blank">{{ song.title }}</a>
           </div>
         </td>
         <td>

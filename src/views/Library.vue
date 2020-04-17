@@ -1,9 +1,12 @@
 <template>
   <div class="about">
     <h1>This is the library!</h1>
-    <h2 v-bind:key="chord.id" v-for="chord in chords">
-      {{ chord.name }} --- guitar / ukulele
-    </h2>
+    <p></p>
+    <div id="grid">
+      <div v-bind:key="chord.id" v-for="chord in chords">
+        <img v-bind:src="chord.url" v-bind:alt="chord.name" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -28,5 +31,11 @@ export default {
 .about {
   margin-left: 20%;
   background-color: aquamarine;
+}
+#grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: red;
 }
 </style>
