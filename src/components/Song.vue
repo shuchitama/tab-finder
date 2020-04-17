@@ -4,7 +4,7 @@
       <div class="song-item">
         <section class="song-info">
           <header class="title">
-            {{ song.title }}
+            <a v-bind:href="''+song.url+''" target="_blank">{{ song.title }}</a>
           </header>
           <div class="artist">
             {{ song.artist }}
