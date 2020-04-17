@@ -3,7 +3,8 @@
     <Header />
     <SideBar v-on:chords-submitted="passChordsToSongList"/>
     <br />
-    <div><b class="login">Login</b> to create a list with your favourite songs</div>
+    <Login />
+
     <br />
     <Songlist v-bind:chordIDs="chordIDs"/>
     <br />
@@ -14,6 +15,7 @@
 <script>
 import Songlist from "@/components/Songlist.vue";
 import SideBar from "@/components/SideBar.vue";
+import Login from "@/components/Login.vue";
 import Topten from "@/components/Topten.vue";
 
 export default {
@@ -21,6 +23,7 @@ export default {
   components: {
     Songlist,
     SideBar,
+    Login,
     Topten
   },
   data() {
@@ -36,14 +39,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.login:hover {
- color: green;
- border: solid;
- border-radius: 4px;
- padding-left: 4px;
- padding-right: 4px;
- border-color:green;
-}
-</style>
