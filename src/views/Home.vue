@@ -1,8 +1,12 @@
 <template>
   <div class="home">
     <Header />
-    <SideBar v-on:chords-submitted="passChordsToSongList" />
-    <Songlist v-bind:chordIDs="chordIDs" />
+    <SideBar v-on:chords-submitted="passChordsToSongList"/>
+    <br />
+    <div><b class="login">Login</b> to create a list with your favourite songs</div>
+    <br />
+    <Songlist v-bind:chordIDs="chordIDs"/>
+    <br />
     <Topten v-bind:topten="topten" />
   </div>
 </template>
@@ -32,3 +36,14 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.login:hover {
+ color: green;
+ border: solid;
+ border-radius: 4px;
+ padding-left: 4px;
+ padding-right: 4px;
+ border-color:green;
+}
+</style>
