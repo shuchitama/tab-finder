@@ -14,7 +14,7 @@
           </div>
         </section>
         <section class="buttons">
-          <button>Favourite</button>
+          <a class="favourite"><b><b-icon icon="plus"></b-icon></b> Add to Favourites</a>
           <button>Percent match</button>
         </section>
       </div>
@@ -47,6 +47,9 @@ export default {
   justify-content: space-between;
   padding: 20px;
 }
+.song-item:hover .favourite{
+  opacity: 1;
+}
 .buttons {
   display: flex;
   flex-direction: column;
@@ -61,4 +64,9 @@ export default {
 .chords {
   color: black;
 }
+
+.favourite {
+  opacity: 0;
+}
+
 </style>
