@@ -1,8 +1,10 @@
 <template>
-  <section class="songlist">
-    <header>Your results:</header>
-    <Song v-bind:filteredSongs="filteredSongs" />
-  </section>
+  <div>
+    <!-- <header>Your results:</header> -->
+    <section class="songlist">
+      <Song v-bind:filteredSongs="filteredSongs" />
+    </section>
+  </div>
 </template>
 
 <script>

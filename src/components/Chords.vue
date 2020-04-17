@@ -89,6 +89,10 @@ export default {
 </script>
 
 <style scoped>
+.card-body {
+  /* background-color: red; */
+  background-image: url("../../public/background.jpg");
+}
 .grid {
   display: grid;
   justify-content: center;
@@ -104,7 +108,8 @@ export default {
   width: 50px;
   padding: 2% 5%;
   margin: 2% 2%;
-  background-color: forestgreen;
+  background-color: rgb(9, 53, 9);
+  color: whitesmoke;
 }
 
 .active {

@@ -34,6 +34,5 @@ export default {
 .sidebar {
   width: 100%;
   height: 20%;
-  background-color: white;
 }
 </style>
