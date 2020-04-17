@@ -1,8 +1,12 @@
 <template>
 <a>
-  <div>
+  <div v-if="loggedOut">
     <b class="login" v-b-modal.modal-prevent-closing>Login</b>
       to create a list with your favourite songs
+  </div>
+  <div v-else>
+      You are logged in
+      <button @click="logout">Logout</button>
   </div>
     <b-modal
       id="modal-prevent-closing"
@@ -49,7 +53,7 @@
           variant="success"
           class="float-right"
           size="sm"
-          @click="show=false"
+          @click="login"
         >
           Login
         </b-button>
@@ -58,6 +62,52 @@
     </b-modal>
   </a>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        loggedOut: true
+      }
+    },
+    methods: {
+      login() {
+        this.loggedOut = false;
+        this.$refs['modal'].hide();
+      },
+      logout() {
+        this.loggedOut = true;
+      },
+      checkFormValidity() {
+        const valid = this.$refs.form.checkValidity()
+        this.nameState = valid
+        return valid
+      },
+      resetModal() {
+        this.name = ''
+        this.nameState = null
+      },
+      handleOk(bvModalEvt) {
+        // Prevent modal from closing
+        bvModalEvt.preventDefault()
+        // Trigger submit handler
+        this.handleSubmit()
+      },
+      handleSubmit() {
+        // Exit when the form isn't valid
+        if (!this.checkFormValidity()) {
+          return
+        }
+        // Push the name to submitted names
+        this.submittedNames.push(this.name)
+        // Hide the modal manually
+        this.$nextTick(() => {
+          this.$bvModal.hide('modal-prevent-closing')
+        })
+      }
+    }
+  }
+</script>
 
 <style scoped>
 .login:hover {
