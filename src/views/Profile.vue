@@ -1,9 +1,8 @@
 <template>
   <div class="profile">
     <h2>This is the Profile page!</h2>
+    <h4>User: {{ user }}</h4>
     <p>My favorite songs are:</p>
-    <!-- {{ songIDs }} -->
-    <!-- {{ favList }} -->
     <Favourites v-bind:favList="favList" />
   </div>
 </template>
@@ -18,6 +17,7 @@ Vue.use(VueAxios, axios);
 export default {
   data() {
     return {
+      user: 1,
       songIDs: [],
       favList: []
     };
@@ -29,7 +29,7 @@ export default {
     axios
       .get("http://localhost:3001/api/usersongs")
       .then(response => {
-        this.songIDs = (response.data.filter(el => el.user_id === 2)).map(el => el.song_id);
+        this.songIDs = (response.data.filter(el => el.user_id === this.user )).map(el => el.song_id);
       })
       .then(
         axios.get("http://localhost:3001/api/songs").then(res => {

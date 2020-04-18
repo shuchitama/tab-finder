@@ -20,7 +20,6 @@ export default {
   },
   created() {
     axios.get("http://localhost:3001/api/chords").then(res => {
-      console.log(res);
       this.chords = res.data;
     });
   }

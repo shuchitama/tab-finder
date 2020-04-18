@@ -14,7 +14,10 @@
           </div>
         </section>
         <section class="buttons">
-          <a class="favourite"><b><b-icon icon="plus"></b-icon></b> Add to Favourites</a>
+          <div class="favourite" @click="addToFav">
+            <b><b-icon icon="plus"></b-icon></b> 
+            Add to Favourites
+          </div>
           <button>Percent match</button>
         </section>
       </div>
@@ -23,9 +26,22 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "song",
-  props: ["filteredSongs"]
+  props: ["filteredSongs"],
+  data() {
+    return {
+      payload: ['payload!']
+    }
+  },
+  methods: {
+    addToFav() {
+      axios.put("http://localhost:3001/api/usersongs", { userid: 1, songid: 26 })
+      .catch(error => console.log(error));
+    }
+  }
 };
 </script>
 

@@ -90,7 +90,6 @@ export default {
 
 <style scoped>
 .card-body {
-  /* background-color: red; */
   background-image: url("../../public/background.jpg");
 }
 .grid {
