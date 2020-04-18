@@ -1,6 +1,6 @@
 <template>
   <a>
-    <div v-if="!$store.state.login">
+    <div v-if="!this.$store.state.login">
       <b class="login" v-b-modal.modal-prevent-closing>Login</b>
       to create a list with your favourite songs
     </div>
@@ -41,7 +41,6 @@ export default {
   },
   methods: {
     login() {
-      // this.loggedOut = false;
       this.$store.commit("doLogin");
       this.$refs["modal"].hide();
     },

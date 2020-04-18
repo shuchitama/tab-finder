@@ -33,7 +33,7 @@ export default {
   props: ["filteredSongs"],
   methods: {
     addToFav(id) {
-      if (this.$store.login === true) {
+      if (this.$store.state.login === true) {
         axios.put("http://localhost:3001/api/usersongs", { userid: 1, songid: id })
         .catch(error => console.log(error));
       } 
