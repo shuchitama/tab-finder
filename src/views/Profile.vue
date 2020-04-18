@@ -2,7 +2,6 @@
   <div class="profile">
     <h2>This is the Profile page!</h2>
     <h4>User: {{ user }}</h4>
-    <p>My favorite songs are:</p>
     <Favourites v-bind:favList="favList" />
   </div>
 </template>

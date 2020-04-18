@@ -14,7 +14,7 @@
           </div>
         </section>
         <section class="buttons">
-          <div class="favourite" @click="addToFav">
+          <div class="favourite" @click="addToFav(song.id)">
             <b><b-icon icon="plus"></b-icon></b> 
             Add to Favourites
           </div>
@@ -31,14 +31,9 @@ import axios from "axios";
 export default {
   name: "song",
   props: ["filteredSongs"],
-  data() {
-    return {
-      payload: ['payload!']
-    }
-  },
   methods: {
-    addToFav() {
-      axios.put("http://localhost:3001/api/usersongs", { userid: 1, songid: 26 })
+    addToFav(id) {
+      axios.put("http://localhost:3001/api/usersongs", { userid: 1, songid: id })
       .catch(error => console.log(error));
     }
   }
