@@ -33,8 +33,13 @@ export default {
   props: ["filteredSongs"],
   methods: {
     addToFav(id) {
-      axios.put("http://localhost:3001/api/usersongs", { userid: 1, songid: id })
-      .catch(error => console.log(error));
+      if (this.$store.login === true) {
+        axios.put("http://localhost:3001/api/usersongs", { userid: 1, songid: id })
+        .catch(error => console.log(error));
+      } 
+      else {
+        alert("Please log in to add the song to your favourites!");
+      }
     }
   }
 };
