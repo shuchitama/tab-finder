@@ -31,8 +31,20 @@ export default {
 </script>
 
 <style scoped>
-.sidebar {
-  width: 100%;
-  height: 20%;
+/* Mobile version */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: 20%;
+  }
+}
+
+/* Desktop version */
+@media screen and (min-width: 700px) {
+  .sidebar {
+    width: 285px;
+    height: 300px;
+  }
 }
 </style>
+

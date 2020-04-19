@@ -1,5 +1,5 @@
 <template>
-  <a>
+  <a id="login-line">
     <div v-if="!this.$store.state.login">
       <b class="login" v-b-modal.modal-prevent-closing>Login</b>
       to create a list with your favourite songs
@@ -59,5 +59,8 @@ export default {
   padding-left: 4px;
   padding-right: 4px;
   border-color: green;
+}
+#login-line {
+  margin-left: 285px;
 }
 </style>

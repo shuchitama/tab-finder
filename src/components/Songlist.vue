@@ -53,7 +53,8 @@ export default {
 <style scoped>
 .songlist {
   align-self: center;
-  margin: auto;
+  /* margin: auto; */
+  margin-left: 350px;
   border: solid;
   width: 50%;
 }

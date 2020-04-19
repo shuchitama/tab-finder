@@ -11,7 +11,6 @@
 
 <style scoped>
 .about {
-  margin-left: 30%;
   background-color: aquamarine;
 }
 </style>

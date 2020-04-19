@@ -17,6 +17,8 @@
         class="submit button">
         Let's get some songs!
         </b-button>
+        <br />
+        <br />
         <b-button 
           class="clear button" 
           @click="clearChords">
@@ -92,27 +94,32 @@ export default {
 .card-body {
   background-image: url("../../public/background.jpg");
 }
-.grid {
+/* .grid {
   display: grid;
   justify-content: center;
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
   grid-template-rows: auto auto;
   column-gap: 10px;
   row-gap: 10px;
+} */
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .chord {
   border-radius: 4px;
   border: black;
   width: 50px;
-  padding: 2% 5%;
+  /* padding: 2% 5%; */
   margin: 2% 2%;
   background-color: rgb(9, 53, 9);
   color: whitesmoke;
 }
 
 .active {
-  background-color: greenyellow;
+  background-color: rgb(33, 25, 102);
 }
 
 .button {
