@@ -1,7 +1,6 @@
 <template>
   <div class="profile">
     <h2>This is the Profile page!</h2>
-    <h4>User: {{ user }}</h4>
     <Favourites v-bind:favList="favList" />
   </div>
 </template>
@@ -16,7 +15,6 @@ Vue.use(VueAxios, axios);
 export default {
   data() {
     return {
-      user: 1,
       songIDs: [],
       favList: []
     };
@@ -24,16 +22,22 @@ export default {
   components: {
     Favourites
   },
-  created() {
+  mounted() {
     axios
       .get("http://localhost:3001/api/usersongs")
       .then(response => {
-        this.songIDs = (response.data.filter(el => el.user_id === this.user )).map(el => el.song_id);
+        console.log("request to usersongs successful")
+        this.songIDs = (response.data.map(el => el.song_id));
       })
       .then(
         axios.get("http://localhost:3001/api/songs").then(res => {
+        console.log("request to songs successful")
+        console.log("songIDs: ", this.songIDs)
         const allSongs = res.data;
-        this.favList = allSongs.filter(song => this.songIDs.includes(song.id))
+        console.log("allSongs: ", allSongs)
+        const list = allSongs.filter(song => this.songIDs.includes(song.id))
+        // this.favList = allSongs.filter(song => this.songIDs.includes(song.id))
+        console.log("favList inside Profile :", list);
         })
       )
   }

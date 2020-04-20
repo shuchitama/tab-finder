@@ -31,7 +31,10 @@
 <script>
 export default {
   name: "Favourites",
-  props: ["favList"]
+  props: ["favList"],
+  created() {
+    console.log("favlist received by Favourites: ", this.$props.favList)
+  }
 };
 </script>
 
