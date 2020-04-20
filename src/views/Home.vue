@@ -39,3 +39,11 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.home {
+
+  background-image: url("../../public/2.jpg");
+  /* ("../../public/homeBkground.jpg"); */
+}
+</style>

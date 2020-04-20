@@ -31,11 +31,11 @@ export default {
         this.songIDs = (response.data.filter(el => el.user_id === this.user )).map(el => el.song_id);
       })
       .then(
-        axios.get("http://localhost:3001/api/songs").then(res => {
+        axios.get("http://localhost:3001/api/songs"))
+      .then(res => {
         const allSongs = res.data;
         this.favList = allSongs.filter(song => this.songIDs.includes(song.id))
-        })
-      )
+      })
   }
 };
 </script>

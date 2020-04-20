@@ -3,12 +3,12 @@
     <div class="song" v-bind:key="song.id" v-for="song in filteredSongs">
       <div class="song-item">
         <section class="song-info">
-          <header class="title">
+          <h2 class="title">
             <a v-bind:href="song.url" target="_blank">{{ song.title }}</a>
-          </header>
-          <div class="artist">
+          </h2>
+          <h4 class="artist">
             {{ song.artist }}
-          </div>
+          </h4>
           <div class="chords">
             Chords: {{ song.chords.join(", ") }}
           </div>
@@ -52,7 +52,9 @@ export default {
   justify-content: center;
   text-align: left;
   border: solid;
+  border-color: #5B5656;
   border-radius: 8px;
+  box-shadow: 10px 10px 5px rgb(128, 128, 128);
   top: 50px;
   margin: 20px;
   background-color: darkseagreen;

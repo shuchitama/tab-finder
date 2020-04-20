@@ -54,7 +54,7 @@ export default {
 .songlist {
   align-self: center;
   margin: auto;
-  border: solid;
+  /* border: solid; */
   width: 50%;
 }
 </style>
