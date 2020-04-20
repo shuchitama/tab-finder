@@ -26,18 +26,12 @@ export default {
     axios
       .get("http://localhost:3001/api/usersongs")
       .then(response => {
-        console.log("request to usersongs successful")
         this.songIDs = (response.data.map(el => el.song_id));
       })
       .then(
         axios.get("http://localhost:3001/api/songs").then(res => {
-        console.log("request to songs successful")
-        console.log("songIDs: ", this.songIDs)
         const allSongs = res.data;
-        console.log("allSongs: ", allSongs)
-        const list = allSongs.filter(song => this.songIDs.includes(song.id))
-        // this.favList = allSongs.filter(song => this.songIDs.includes(song.id))
-        console.log("favList inside Profile :", list);
+        this.favList = allSongs.filter(song => this.songIDs.includes(song.id))
         })
       )
   }
