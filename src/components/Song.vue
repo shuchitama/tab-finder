@@ -65,6 +65,7 @@ export default {
 }
 .song-item:hover .favourite{
   opacity: 1;
+  cursor: pointer;
 }
 .buttons {
   display: flex;
