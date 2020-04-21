@@ -1,11 +1,6 @@
 <template>
   <article>
-    <div v-if="filteredSongs.length > 0">
-      <Login />
-    </div>
     <br />
-    <div>{{resultCount}}</div>
-    <div class="song" v-bind:key="song.id" v-for="song in filteredSongs">
       <div class="song-item">
         <section class="song-info">
           <header class="title">
@@ -20,9 +15,9 @@
         </section>
         <section class="buttons">
           <div 
-          v-bind:class="{ active: active }"
           class="favourite" 
-          @click="addToFav(song.id)">
+          v-bind:class="{ active: isFave(song.id) }"
+          @click="toggleFavourite(song.id)">
             <b>
               <b-icon icon="plus"></b-icon>
             </b> 
@@ -31,47 +26,52 @@
           <button>Percent match</button>
         </section>
       </div>
-    </div>
+    
   </article>
 </template>
 
 <script>
 import axios from "axios";
-import Login from "@/components/Login.vue";
 export default {
+  name: "song",
+  props: ["song"],
   data() {
     return {
-      resultCount: "",
-      active: false
+      allFavourites: []
     }
   },
-  name: "song",
-  props: ["filteredSongs"],
-  components: {
-    Login
-  },
-  watch: {
-    "filteredSongs": function() {
-      const num = this.filteredSongs.length;
-      if (num === 0) {
-        this.resultCount = "No results found"
-      } else if (num === 1) {
-        this.resultCount = "1 result found:"
-      } else {
-        this.resultCount = `${num} results found:`
-      }
-    }
+  created () {
+      axios
+      .get("http://localhost:3001/api/usersongs")
+      .then(response => {
+        this.allFavourites = (response.data.map(el => el.song_id));
+      })
   },
   methods: {
+    toggleFavourite(id) {
+      if (this.allFavourites.includes(id)) {
+        this.deleteFav(id)
+      } else {
+        this.addToFav(id)
+      }
+    },
     addToFav(id) {
       if (this.$store.state.login === true) {
         axios.put("http://localhost:3001/api/usersongs", { userid: 1, songid: id })
         .catch(error => console.log(error));
-        this.active = !this.active;
+        this.allFavourites.push(id)
       } 
       else {
         alert("Please log in to add the song to your favourites!");
       }
+    },
+    deleteFav(id) {
+        axios.delete("http://localhost:3001/api/usersongs", { songid: id })
+        .catch(error => console.log(error));
+        this.allFavourites = this.allFavourites.filter(el => el !== id)
+    },
+    isFave(id) {
+      return this.allFavourites.includes(id)
     }
   }
 };
@@ -118,7 +118,7 @@ export default {
   opacity: 0;
 }
 .active {
-  color: darkred;
+  color: red
 }
 
 </style>
