@@ -18,8 +18,8 @@
           <div 
           class="favourite" 
           @click="toggleFavourite(song.id)">
-              <b-icon v-if="isFave(song.id)" animation="throb" icon="heart-fill"></b-icon>
-              <b-icon v-else animation="throb" icon="heart"></b-icon>
+              <b-icon v-if="isFave(song.id)" animation="fade" icon="heart-fill"></b-icon>
+              <b-icon v-else animation="fade" icon="heart"></b-icon>
           </div>
       </div>
   </article>
@@ -99,9 +99,6 @@ flex-direction: column;
   margin: 20px;
   background-color: darkseagreen;
 } */
-.favourite{
-  cursor: pointer;
-}
 .buttons {
   display: flex;
   flex-direction: column;
@@ -110,7 +107,7 @@ flex-direction: column;
   width: 21px;
   height: 20px;
   object-fit: contain;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -122,6 +119,7 @@ flex-direction: column;
 }
 .title {
   text-transform: uppercase;
+  text-align: justify;
   width: 183px;
   height: 20px;
   font-family: Oswald;
@@ -142,7 +140,7 @@ flex-direction: column;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  /* line-height: 1.25; */
+  text-align: justify;
   letter-spacing: normal;
   color: #4a4a4a;
 }
