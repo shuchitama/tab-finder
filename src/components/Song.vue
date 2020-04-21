@@ -86,9 +86,8 @@ export default {
 .song-info {
 display: flex;
 flex-direction: column;
-/* justify-content: left; */
 }
-/* .song {
+.song {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,7 +97,7 @@ flex-direction: column;
   top: 50px;
   margin: 20px;
   background-color: darkseagreen;
-} */
+}
 .buttons {
   display: flex;
   flex-direction: column;
@@ -106,13 +105,6 @@ flex-direction: column;
 .favourite {
   width: 21px;
   height: 20px;
-  object-fit: contain;
-  font-size: 20px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 0.67px;
   text-align: right;
   color: #889c91;
   cursor: pointer;
@@ -120,6 +112,8 @@ flex-direction: column;
 .title {
   text-transform: uppercase;
   text-align: justify;
+  margin-bottom: 4px;
+  margin-top: -3px;
   width: 183px;
   height: 20px;
   font-family: Oswald;
