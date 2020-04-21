@@ -1,11 +1,6 @@
 <template>
   <article>
-    <div v-if="filteredSongs.length > 0">
-      <Login />
-    </div>
     <br />
-    <div>{{resultCount}}</div>
-    <div class="song" v-bind:key="song.id" v-for="song in filteredSongs">
       <div class="song-item">
         <section class="song-info">
           <header class="title">
@@ -20,7 +15,6 @@
         </section>
         <section class="buttons">
           <div 
-          v-bind:class="{ active: active }"
           class="favourite" 
           @click="addToFav(song.id)">
             <b>
@@ -31,43 +25,21 @@
           <button>Percent match</button>
         </section>
       </div>
-    </div>
+    
   </article>
 </template>
 
 <script>
 import axios from "axios";
-import Login from "@/components/Login.vue";
 export default {
-  data() {
-    return {
-      resultCount: "",
-      active: false
-    }
-  },
   name: "song",
-  props: ["filteredSongs"],
-  components: {
-    Login
-  },
-  watch: {
-    "filteredSongs": function() {
-      const num = this.filteredSongs.length;
-      if (num === 0) {
-        this.resultCount = "No results found"
-      } else if (num === 1) {
-        this.resultCount = "1 result found:"
-      } else {
-        this.resultCount = `${num} results found:`
-      }
-    }
-  },
+  props: ["song"],
   methods: {
     addToFav(id) {
       if (this.$store.state.login === true) {
         axios.put("http://localhost:3001/api/usersongs", { userid: 1, songid: id })
         .catch(error => console.log(error));
-        this.active = !this.active;
+        this.$emit('fav-added', id)
       } 
       else {
         alert("Please log in to add the song to your favourites!");
@@ -116,9 +88,6 @@ export default {
 
 .favourite {
   opacity: 0;
-}
-.active {
-  color: darkred;
 }
 
 </style>
