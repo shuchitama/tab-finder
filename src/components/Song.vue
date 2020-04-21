@@ -75,17 +75,18 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
 .song-card {
-  width: 273px;
+  width: 295px;
   height: 87px;
   background-color: #c9d3ce;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
+  margin-top: -18px;
 }
 .song-info {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .song {
   display: flex;
@@ -115,7 +116,7 @@ flex-direction: column;
   text-align: justify;
   margin-bottom: 4px;
   margin-top: -3px;
-  width: 183px;
+  width: 200px;
   height: 20px;
   font-family: Oswald;
   font-size: 16px;
@@ -128,7 +129,7 @@ flex-direction: column;
 }
 
 .artist, .chords {
-  width: 143px;
+  width: 160px;
   height: 30px;
   font-family: inherit;
   font-size: 10px;

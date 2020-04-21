@@ -1,16 +1,18 @@
 <template>
-  <div>
-    <section class="songlist">
+  <div class="songlist-container">
     <div v-if="filteredSongs.length > 0">
+      <br />
       <Login />
     </div>
+     <br />
     <div>{{resultCount}}</div>
+     <br />
+    <section class="songlist">
       <div class="song" 
       v-for="song in filteredSongs"
       v-bind:key="song.id">
         <Song 
-        v-bind:song="song"
-        v-on:fav-added="addfav"/>
+        v-bind:song="song"/>
       </div>
     </section>
   </div>
@@ -67,26 +69,25 @@ export default {
       const chord = chordList.find(element => element.id === id)
       return chord.name;
       })
-    },
-    addfav(id) {
-      console.log(id);
     }
   }
 }
 </script>
 
 <style scoped>
-.songlist {
+.songlist-container {
+  background-image: linear-gradient(to bottom, #f3efef, #f3efef);
+  background-blend-mode: multiply;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* display: grid;
+}
+.songlist {
+  display: grid;
   grid-template-columns: auto auto;
-  column-gap: 20px;
-  row-gap: 20px; */
-  background-blend-mode: multiply;
-  background-image: linear-gradient(to bottom, #f3efef, #f3efef);
-  display:flex;
+  column-gap: 6px;
+  row-gap: 0px;
+  justify-items: center;
 }
 </style>
 
