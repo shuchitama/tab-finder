@@ -89,10 +89,6 @@ export default {
   height: 50px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
-  /* font-weight: bold; */
-  /* font-stretch: normal; */
-  /* font-style: normal; */
-  /* line-height: normal; */
   letter-spacing: 0.75px;
   text-align: center;
   color: #71ad90;
