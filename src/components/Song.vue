@@ -1,5 +1,6 @@
 <template>
   <article>
+    <div>{{resultCount}}</div>
     <div class="song" v-bind:key="song.id" v-for="song in filteredSongs">
       <div class="song-item">
         <section class="song-info">
@@ -29,8 +30,25 @@
 import axios from "axios";
 
 export default {
+  data() {
+    return {
+      resultCount: ""
+    }
+  },
   name: "song",
   props: ["filteredSongs"],
+  watch: {
+    "filteredSongs": function() {
+      const num = this.filteredSongs.length;
+      if (num === 0) {
+        this.resultCount = "No results found"
+      } else if (num === 1) {
+        this.resultCount = "1 result found:"
+      } else {
+        this.resultCount = `${num} results found:`
+      }
+    }
+  },
   methods: {
     addToFav(id) {
       if (this.$store.state.login === true) {
