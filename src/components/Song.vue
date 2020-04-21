@@ -16,7 +16,8 @@
         <section class="buttons">
           <div 
           class="favourite" 
-          @click="addToFav(song.id)">
+          v-bind:class="{ active: isFave(song.id) }"
+          @click="toggleFavourite(song.id)">
             <b>
               <b-icon icon="plus"></b-icon>
             </b> 
@@ -34,16 +35,43 @@ import axios from "axios";
 export default {
   name: "song",
   props: ["song"],
+  data() {
+    return {
+      allFavourites: []
+    }
+  },
+  created () {
+      axios
+      .get("http://localhost:3001/api/usersongs")
+      .then(response => {
+        this.allFavourites = (response.data.map(el => el.song_id));
+      })
+  },
   methods: {
+    toggleFavourite(id) {
+      if (this.allFavourites.includes(id)) {
+        this.deleteFav(id)
+      } else {
+        this.addToFav(id)
+      }
+    },
     addToFav(id) {
       if (this.$store.state.login === true) {
         axios.put("http://localhost:3001/api/usersongs", { userid: 1, songid: id })
         .catch(error => console.log(error));
-        this.$emit('fav-added', id)
+        this.allFavourites.push(id)
       } 
       else {
         alert("Please log in to add the song to your favourites!");
       }
+    },
+    deleteFav(id) {
+        axios.delete("http://localhost:3001/api/usersongs", { songid: id })
+        .catch(error => console.log(error));
+        this.allFavourites = this.allFavourites.filter(el => el !== id)
+    },
+    isFave(id) {
+      return this.allFavourites.includes(id)
     }
   }
 };
@@ -88,6 +116,9 @@ export default {
 
 .favourite {
   opacity: 0;
+}
+.active {
+  color: red
 }
 
 </style>
