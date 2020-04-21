@@ -17,11 +17,9 @@
         </section>
           <div 
           class="favourite" 
-          v-bind:class="{ active: isFave(song.id) }"
           @click="toggleFavourite(song.id)">
-            <b>
-              <b-icon icon="heart"></b-icon>
-            </b> 
+              <b-icon v-if="isFave(song.id)" icon="heart-fill"></b-icon>
+              <b-icon v-else icon="heart"></b-icon>
           </div>
       </div>
     
@@ -113,7 +111,7 @@ flex-direction: column;
   width: 21px;
   height: 20px;
   object-fit: contain;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -141,16 +139,13 @@ flex-direction: column;
   width: 143px;
   height: 30px;
   font-family: Oswald;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
-  line-height: 1.25;
+  /* line-height: 1.25; */
   letter-spacing: normal;
   color: #4a4a4a;
-}
-.active {
-  color: red
 }
 
 </style>
