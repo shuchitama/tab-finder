@@ -18,8 +18,8 @@
           <div 
           class="favourite" 
           @click="toggleFavourite(song.id)">
-              <b-icon v-if="isFave(song.id)" icon="heart-fill"></b-icon>
-              <b-icon v-else icon="heart"></b-icon>
+              <b-icon v-if="isFave(song.id)" animation="throb" icon="heart-fill"></b-icon>
+              <b-icon v-else animation="throb" icon="heart"></b-icon>
           </div>
       </div>
   </article>
