@@ -1,11 +1,13 @@
 <template>
   <article>
     <br />
-      <div class="song-item">
+      <div class="song-card">
         <section class="song-info">
-          <header class="title">
-            <a v-bind:href="song.url" target="_blank">{{ song.title }}</a>
-          </header>
+          <div >
+            <a v-bind:href="song.url" target="_blank">
+              <p class="title">{{ song.title }}</p>
+            </a>
+          </div>
           <div class="artist">
             {{ song.artist }}
           </div>
@@ -19,9 +21,8 @@
           v-bind:class="{ active: isFave(song.id) }"
           @click="toggleFavourite(song.id)">
             <b>
-              <b-icon icon="plus"></b-icon>
+              <b-icon icon="heart"></b-icon>
             </b> 
-            Add to Favourites
           </div>
           <button>Percent match</button>
         </section>
@@ -78,7 +79,22 @@ export default {
 </script>
 
 <style scoped>
-.song {
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+.song-card {
+  width: 273px;
+  height: 87px;
+  background-color: #c9d3ce;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
+.song-info {
+display: flex;
+flex-direction: column;
+/* justify-content: left; */
+}
+/* .song {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,37 +104,57 @@ export default {
   top: 50px;
   margin: 20px;
   background-color: darkseagreen;
-}
-.song-item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 20px;
-}
-.song-item:hover .favourite{
-  opacity: 1;
+} */
+.favourite{
   cursor: pointer;
 }
 .buttons {
   display: flex;
   flex-direction: column;
 }
+.favourite {
+  width: 21px;
+  height: 20px;
+  object-fit: contain;
+  font-size: 20px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.67px;
+  text-align: right;
+  color: #889c91;
+  cursor: pointer;
+}
 .title {
-  color:black;
+  text-transform: uppercase;
+  width: 183px;
+  height: 20px;
+  font-family: Oswald;
+  font-size: 16px;
   font-weight: bold;
-}
-.artist {
-  font-style: italic;
-}
-.chords {
-  color: black;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #233d32;
 }
 
-.favourite {
-  opacity: 0;
+.artist, .chords {
+  width: 143px;
+  height: 30px;
+  font-family: Oswald;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #4a4a4a;
 }
 .active {
   color: red
 }
 
 </style>
+
