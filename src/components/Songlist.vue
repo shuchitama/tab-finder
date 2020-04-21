@@ -77,9 +77,16 @@ export default {
 
 <style scoped>
 .songlist {
-  align-self: center;
-  /* margin: auto; */
-  /* border: solid; */
-  /* width: 50%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  row-gap: 20px; */
+  background-blend-mode: multiply;
+  background-image: linear-gradient(to bottom, #f3efef, #f3efef);
+  display:flex;
 }
 </style>
+
