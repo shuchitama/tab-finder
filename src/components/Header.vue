@@ -53,7 +53,7 @@ export default {
   margin-left: 267px;
   margin-right: 266px;
   font-family: Oswald;
-  font-size: 50px;
+  font-size: 60px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -96,7 +96,7 @@ export default {
   letter-spacing: 0.75px;
   text-align: center;
   color: #71ad90;
-  margin-top: 103px;
+  margin-top: 93px;
   padding-top: 5px;
   background-blend-mode: multiply;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));

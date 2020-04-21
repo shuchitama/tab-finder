@@ -15,10 +15,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
 
 .about {
-  background-color: #7c9388;
+  background-color: #abc4b8;
   color: #ffffff;
   font-family: Oswald;
   font-size: 22px;
+  height: 500px;
 }
 
 h1, h4 {

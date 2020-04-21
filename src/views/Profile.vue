@@ -1,6 +1,13 @@
 <template>
   <div class="profile">
-    <h2>This is the Profile page!</h2>
+    <h2>MY PROFILE</h2>
+    <div id="profile-card">
+      <img src="../../public/avatar.png" />
+      <div id="info">
+        <p>Username: JANE DOE</p>
+        <p>Email: janedoe@gmail.com</p>
+      </div>
+    </div>
     <Favourites v-bind:favList="favList" />
   </div>
 </template>
@@ -26,20 +33,43 @@ export default {
     axios
       .get("http://localhost:3001/api/usersongs")
       .then(response => {
-        this.songIDs = (response.data.map(el => el.song_id));
+        this.songIDs = response.data.map(el => el.song_id);
       })
       .then(
         axios.get("http://localhost:3001/api/songs").then(res => {
-        const allSongs = res.data;
-        this.favList = allSongs.filter(song => this.songIDs.includes(song.id))
+          const allSongs = res.data;
+          this.favList = allSongs.filter(song =>
+            this.songIDs.includes(song.id)
+          );
         })
-      )
+      );
   }
 };
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
+
 h2 {
-  color: red;
+  color: #2d2c2d;
+  background-color: #7c9388;
+  font-family: Oswald;
+  height: 50px;
+}
+
+#profile-card {
+  padding: 20px;
+  margin-top: 20px;
+  width: 400px;
+  background-color: #f3efef;
+  font-family: Oswald;
+  vertical-align: middle;
+  display: inline-block;
+
+}
+
+img {
+  height: 130px;
+  margin: 10px;
 }
 </style>
