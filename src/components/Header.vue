@@ -1,20 +1,20 @@
 <template>
   <header class="header">
     <div id="nav" srcset="img/615@2x.png 2x, img/615@3x.png 3x" class="layer">
-      <container id="tab-finder">
+      <section id="tab-finder">
         <span id="tab">TAB</span>
         <span id="finder">FINDER</span>
-      </container>
-      <container id="find-tabs">
+      </section>
+      <section id="find-tabs">
         <span>Find tabs based on the chords you know!</span>
-      </container>
+      </section>
 
-      <container id="links">
+      <section id="links">
         <router-link to="/">Home</router-link> |
         <router-link to="/library">Library</router-link> |
         <router-link to="/profile">Profile</router-link> |
         <router-link to="/about">About</router-link>
-      </container>
+      </section>
 
     </div>
   </header>
