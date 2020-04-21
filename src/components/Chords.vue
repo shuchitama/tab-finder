@@ -131,7 +131,7 @@ export default {
 }
 
 .active {
-  background-color: rgb(141, 163, 108);
+  background-color: #a6c7b7;
 }
 
 #buttons {
