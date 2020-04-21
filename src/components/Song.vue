@@ -105,6 +105,7 @@ flex-direction: column;
 .favourite {
   width: 21px;
   height: 20px;
+  margin-top: -3px;
   text-align: right;
   color: #889c91;
   cursor: pointer;
