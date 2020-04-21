@@ -15,7 +15,6 @@
             Chords: {{ song.chords.join(", ") }}
           </div>
         </section>
-        <section class="buttons">
           <div 
           class="favourite" 
           v-bind:class="{ active: isFave(song.id) }"
@@ -24,8 +23,6 @@
               <b-icon icon="heart"></b-icon>
             </b> 
           </div>
-          <button>Percent match</button>
-        </section>
       </div>
     
   </article>
