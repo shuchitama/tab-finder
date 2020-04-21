@@ -1,5 +1,9 @@
 <template>
   <article>
+    <div v-if="filteredSongs.length > 0">
+      <Login />
+    </div>
+    <br />
     <div>{{resultCount}}</div>
     <div class="song" v-bind:key="song.id" v-for="song in filteredSongs">
       <div class="song-item">
@@ -28,7 +32,7 @@
 
 <script>
 import axios from "axios";
-
+import Login from "@/components/Login.vue";
 export default {
   data() {
     return {
@@ -37,6 +41,9 @@ export default {
   },
   name: "song",
   props: ["filteredSongs"],
+  components: {
+    Login
+  },
   watch: {
     "filteredSongs": function() {
       const num = this.filteredSongs.length;

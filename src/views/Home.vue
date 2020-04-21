@@ -3,9 +3,6 @@
     <Header />
     <SideBar v-on:chords-submitted="passChordsToSongList"/>
     <br />
-    <Login />
-
-    <br />
     <Songlist v-bind:chordIDs="chordIDs"/>
     <br />
     <Topten v-bind:topten="topten" />
@@ -15,7 +12,6 @@
 <script>
 import Songlist from "@/components/Songlist.vue";
 import SideBar from "@/components/SideBar.vue";
-import Login from "@/components/Login.vue";
 import Topten from "@/components/Topten.vue";
 
 export default {
@@ -23,7 +19,6 @@ export default {
   components: {
     Songlist,
     SideBar,
-    Login,
     Topten
   },
   data() {
