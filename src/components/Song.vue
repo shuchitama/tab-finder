@@ -1,5 +1,9 @@
 <template>
   <article>
+    <div v-if="filteredSongs.length > 0">
+      <Login />
+    </div>
+    <br />
     <div>{{resultCount}}</div>
     <div class="song" v-bind:key="song.id" v-for="song in filteredSongs">
       <div class="song-item">
@@ -15,8 +19,13 @@
           </div>
         </section>
         <section class="buttons">
-          <div class="favourite" @click="addToFav(song.id)">
-            <b><b-icon icon="plus"></b-icon></b> 
+          <div 
+          v-bind:class="{ active: active }"
+          class="favourite" 
+          @click="addToFav(song.id)">
+            <b>
+              <b-icon icon="plus"></b-icon>
+            </b> 
             Add to Favourites
           </div>
           <button>Percent match</button>
@@ -28,15 +37,19 @@
 
 <script>
 import axios from "axios";
-
+import Login from "@/components/Login.vue";
 export default {
   data() {
     return {
-      resultCount: ""
+      resultCount: "",
+      active: false
     }
   },
   name: "song",
   props: ["filteredSongs"],
+  components: {
+    Login
+  },
   watch: {
     "filteredSongs": function() {
       const num = this.filteredSongs.length;
@@ -54,6 +67,7 @@ export default {
       if (this.$store.state.login === true) {
         axios.put("http://localhost:3001/api/usersongs", { userid: 1, songid: id })
         .catch(error => console.log(error));
+        this.active = !this.active;
       } 
       else {
         alert("Please log in to add the song to your favourites!");
@@ -102,6 +116,9 @@ export default {
 
 .favourite {
   opacity: 0;
+}
+.active {
+  color: darkred;
 }
 
 </style>

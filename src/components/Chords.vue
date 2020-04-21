@@ -95,6 +95,9 @@ export default {
 .card {
   border: none;
 }
+span {
+  color: white;
+}
 
 .card-header {
   font-size: 22px;

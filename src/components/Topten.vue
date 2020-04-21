@@ -1,11 +1,11 @@
 <template>
   <div class="topten">
     <h3>MOST SEARCHED SONGS:</h3>
-    <table>
+    <table id="table">
       <tr>
-        <th>Song</th>
-        <th>Artist</th>
-        <th>Chords</th>
+        <th>SONG</th>
+        <th>ARTIST</th>
+        <th>CHORDS</th>
       </tr>
       <tr>
         <td>
@@ -49,24 +49,48 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
 .topten {
-  margin: 5%;
-  background-color: #f3efef;
+  background-color: #e7e3e3;
+  font-family: Oswald;
+  height: 500px;
+  padding-top: 30px;
 }
+
 table {
   margin: 0 auto;
-  background-color: aquamarine;
+  margin-top: 30px;
 }
-tr {
-  margin: 10px;
+
+h3 {
+  letter-spacing: 1px;
 }
+
+th {
+  width: 300px;
+  background-color: #7c9388;
+  letter-spacing: 1px;
+  height: 50px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+td {
+  background-color: #c9d3ce;
+  height: 30px;
+  font-size: 20px;
+}
+
 .title {
-  color: red;
+  height: 40px;
+}
+
+.chords {
+  color: #4a4a4a;
+  height: 40px;
 }
 .artist {
-  font-style: italic;
-}
-.chords {
-  color: blue;
+  height: 40px;
 }
 </style>
