@@ -37,7 +37,8 @@ export default {
 
 <style scoped>
 .topten {
-  margin: 5%;
+  /* margin: 5%; */
+  background-color: #f3efef;
 }
 a {
   color: red;

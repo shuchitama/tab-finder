@@ -28,7 +28,7 @@ export default {
 
 <style scoped>
 .about {
-  background-color: aquamarine;
+  background-color: #7c9388;
 }
 #grid {
   display: flex;

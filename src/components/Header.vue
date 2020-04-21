@@ -41,6 +41,10 @@ export default {
   background-color: black;
 }
 
+#nav a.router-link-exact-active {
+  color: #ffe1b1;
+}
+
 #tab-finder {
   /* width: 235px;
   height: 74px; */
@@ -82,7 +86,6 @@ export default {
 }
 
 #links {
-  /* width: 366px; */
   height: 50px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
@@ -93,7 +96,6 @@ export default {
   letter-spacing: 0.75px;
   text-align: center;
   color: #71ad90;
-  width: 1500px;
   margin-top: 103px;
   padding-top: 5px;
   background-blend-mode: multiply;

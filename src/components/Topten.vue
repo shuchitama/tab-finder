@@ -51,6 +51,7 @@ export default {
 <style scoped>
 .topten {
   margin: 5%;
+  background-color: #f3efef;
 }
 table {
   margin: 0 auto;

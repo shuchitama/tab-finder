@@ -11,14 +11,15 @@
         >{{chord.name}}</button>
       </div>
       <br />
-      <div>
+      <div id="buttons">
         <b-button 
         @click="submitChords"
-        class="submit button">
+        class="submit-button">
         Let's get some songs!
         </b-button>
+        <span>wwww</span>
         <b-button 
-          class="clear button" 
+          class="clear-button" 
           @click="clearChords">
           Clear selection
         </b-button>
@@ -89,33 +90,74 @@ export default {
 </script>
 
 <style scoped>
-.card-body {
-  background-image: url("../../public/background.jpg");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+
+.card {
+  border: none;
 }
+
+.card-header {
+  font-size: 22px;
+}
+
+.card-header {
+  font-family: Oswald;
+  background-blend-mode: multiply;
+  background-image: linear-gradient(to bottom, #7c9388, #7c9388);
+}
+
 .grid {
   display: grid;
   justify-content: center;
-  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
   grid-template-rows: auto auto;
-  column-gap: 10px;
-  row-gap: 10px;
+  column-gap: 20px;
+  row-gap: 20px;
 }
 
 .chord {
   border-radius: 4px;
   border: black;
-  width: 50px;
-  padding: 2% 5%;
-  margin: 2% 2%;
-  background-color: rgb(9, 53, 9);
-  color: whitesmoke;
+  width: 80px;
+  height: 40px;
+  font-size: 18px;
+  /* font-weight: bold; */
+  color: #878787;
+  font-family: Oswald;
+  /* padding: 2% 5%; */
+  /* margin: 2% 2%; */
+  /* background-color: rgb(9, 53, 9); */
+  background-color: #dddddd;
 }
 
 .active {
-  background-color: greenyellow;
+  background-color: rgb(141, 163, 108);
 }
 
-.button {
-  padding: 4px;
+#buttons {
+  margin: 20px;
 }
+
+.submit-button {
+  width: 300px;
+  height: 50px;
+  border-radius: 3px;
+  background-color: #233d32;
+  color: #ffe1b1;
+  font-family: Oswald;
+  font-size: 24px;
+}
+
+.clear-button {
+  width: 300px;
+  height: 50px;
+  border: solid 1.5px #233d32;
+  color: #233d32;
+  background-color: #ffffff;
+  font-family: Oswald;
+  font-size: 24px;
+  text-align: center;
+
+}
+
 </style>

@@ -4,7 +4,6 @@
     <SideBar v-on:chords-submitted="passChordsToSongList"/>
     <br />
     <Login />
-
     <br />
     <Songlist v-bind:chordIDs="chordIDs"/>
     <br />
