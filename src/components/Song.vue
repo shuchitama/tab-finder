@@ -22,7 +22,6 @@
               <b-icon v-else icon="heart"></b-icon>
           </div>
       </div>
-    
   </article>
 </template>
 
@@ -138,7 +137,7 @@ flex-direction: column;
 .artist, .chords {
   width: 143px;
   height: 30px;
-  font-family: Oswald;
+  font-family: inherit;
   font-size: 10px;
   font-weight: bold;
   font-stretch: normal;
