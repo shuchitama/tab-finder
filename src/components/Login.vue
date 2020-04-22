@@ -1,7 +1,7 @@
 <template>
   <a>
     <div v-if="!this.$store.state.login">
-      <b class="login" v-b-modal.modal-prevent-closing>Sign in</b>
+      <button id="login-button" v-b-modal.modal-prevent-closing>Sign in</button>
       to create a list with your favourite songs
     </div>
     <div v-else>
@@ -59,16 +59,8 @@ export default {
 a {
   font-family: Oswald;
 }
-.login:hover {
-  color: green;
-  border: solid;
-  border-radius: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
-  border-color: green;
-}
 
-#logout-button {
+#logout-button, #login-button {
   width: 80px;
   height: 30px;
   border-radius: 3px;
