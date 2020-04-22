@@ -1,27 +1,32 @@
 <template>
   <article>
     <br />
-      <div class="song-card">
-        <section class="song-info">
-          <div >
-            <a v-bind:href="song.url" target="_blank">
-              <p class="title">{{ song.title }}</p>
-            </a>
-          </div>
-          <div class="artist">
-            {{ song.artist }}
-          </div>
-          <div class="chords">
-            Chords: {{ song.chords.join(", ") }}
-          </div>
-        </section>
-          <div 
-          class="favourite" 
-          @click="toggleFavourite(song.id)">
-              <b-icon v-if="isFave(song.id)" animation="fade" icon="heart-fill"></b-icon>
-              <b-icon v-else animation="fade" icon="heart"></b-icon>
-          </div>
+    <div class="song-card">
+      <section class="song-info">
+        <div >
+          <a v-bind:href="song.url" target="_blank">
+            <p class="title">{{ song.title }}</p>
+          </a>
+        </div>
+        <div class="artist">
+          {{ song.artist }}
+        </div>
+        <div class="chords">
+          Chords: {{ song.chords.join(", ") }}
+        </div>
+      </section>
+      <div 
+      class="favourite" 
+      @click="toggleFavourite(song.id)">
+        <div v-if="this.$store.state.login === false">
+          <b-icon animation="fade" icon="heart"></b-icon>
+        </div>
+        <div v-else>
+          <b-icon v-if="isFave(song.id)" animation="fade" icon="heart-fill"></b-icon>
+          <b-icon v-else animation="fade" icon="heart"></b-icon>
+        </div>
       </div>
+    </div>
   </article>
 </template>
 
