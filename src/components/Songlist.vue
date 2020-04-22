@@ -81,11 +81,10 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 
 .songlist-container {
-  background-image: linear-gradient(to bottom, #f3efef, #f3efef);
-  background-blend-mode: multiply;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px;
 }
 
 .songlist {
