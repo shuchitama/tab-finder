@@ -69,11 +69,14 @@ export default {
       }
     },
     deleteFav(id) {
+      if (this.$store.state.login === true) {
       axios
-        .delete("http://localhost:3001/api/usersongs", { songid: id })
-        .then(() => console.log("deleted!"))
+        .delete("http://localhost:3001/api/usersongs", { data: {songid: id} })
         .catch(error => console.log(error));
       this.allFavourites = this.allFavourites.filter(el => el !== id);
+      } else {
+        alert("Please log in to add the song to your favourites!");
+      }
     },
     isFave(id) {
       return this.allFavourites.includes(id);

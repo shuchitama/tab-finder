@@ -29,7 +29,7 @@ export default {
   components: {
     Favourites
   },
-  mounted() {
+  created() {
     axios
       .get("http://localhost:3001/api/usersongs")
       .then(response => {
