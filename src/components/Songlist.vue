@@ -1,7 +1,6 @@
 <template>
   <div class="songlist-container">
     <div v-if="filteredSongs.length > 0">
-      <br />
       <Login />
     </div>
     <br />

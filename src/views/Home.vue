@@ -2,7 +2,6 @@
   <div class="home">
     <Header />
     <SideBar v-on:chords-submitted="passChordsToSongList" />
-    <br />
     <Songlist v-bind:chordIDs="chordIDs" />
     <br />
     <Topten v-bind:topten="topten" />
