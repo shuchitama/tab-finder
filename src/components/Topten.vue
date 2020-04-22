@@ -10,7 +10,9 @@
       <tr>
         <td>
           <div class="title" v-bind:key="song.id" v-for="song in TopTenSongs">
-            <a v-bind:href="song.url" target="_blank">{{ song.title }}</a>
+            <a v-bind:href="song.url" target="_blank">
+              <p class="title">{{ song.title }}</p>
+            </a>
           </div>
         </td>
         <td>
@@ -83,7 +85,10 @@ td {
 }
 
 .title {
+  text-transform: uppercase;
   height: 40px;
+  font-family: Oswald;
+  color: #233d32;
 }
 
 .chords {
