@@ -15,17 +15,22 @@
           Chords: {{ song.chords.join(", ") }}
         </div>
       </section>
-      <div 
-      class="favourite" 
-      @click="toggleFavourite(song.id)">
-        <div v-if="this.$store.state.login === false">
-          <b-icon icon="heart"></b-icon>
+      <section class="favAndMatch">
+        <div 
+        class="favourite" 
+        @click="toggleFavourite(song.id)">
+          <div v-if="this.$store.state.login === false">
+            <b-icon icon="heart"></b-icon>
+          </div>
+          <div v-else>
+            <b-icon v-if="isFave(song.id)" icon="heart-fill"></b-icon>
+            <b-icon v-else icon="heart"></b-icon>
+          </div>
         </div>
-        <div v-else>
-          <b-icon v-if="isFave(song.id)" icon="heart-fill"></b-icon>
-          <b-icon v-else icon="heart"></b-icon>
+        <div class="percent-match">
+          {{percentMatch(song.chords)}}% MATCH
         </div>
-      </div>
+      </section>
     </div>
   </article>
 </template>
@@ -34,7 +39,7 @@
 import axios from "axios";
 export default {
   name: "song",
-  props: ["song"],
+  props: ["song", "chordIDs"],
   data() {
     return {
       allFavourites: []
@@ -66,11 +71,15 @@ export default {
     deleteFav(id) {
       axios
         .delete("http://localhost:3001/api/usersongs", { songid: id })
+        .then(() => console.log("deleted!"))
         .catch(error => console.log(error));
       this.allFavourites = this.allFavourites.filter(el => el !== id);
     },
     isFave(id) {
       return this.allFavourites.includes(id);
+    },
+    percentMatch(chords) {
+      return chords.length/this.$props.chordIDs.length * 100
     }
   }
 };
@@ -116,9 +125,26 @@ export default {
   width: 21px;
   height: 20px;
   margin-top: -3px;
-  text-align: right;
+  margin-left: 10px;
+  align-self: center;
   color: #889c91;
   cursor: pointer;
+}
+
+.percent-match {
+  width: 85px;
+  font-family: Oswald;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  color: #889c91;
+  padding-top: 15px;
+  padding-right: 20px;
+}
+
+.favAndMatch {
+  display: flex;
+  flex-direction: column;
 }
 
 .title {

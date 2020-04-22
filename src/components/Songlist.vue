@@ -9,7 +9,9 @@
     <br />
     <section class="songlist">
       <div class="song" v-for="song in filteredSongs" v-bind:key="song.id">
-        <Song v-bind:song="song" />
+        <Song 
+        v-bind:song="song"
+        v-bind:chordIDs="chordIDs"/>
       </div>
     </section>
   </div>
