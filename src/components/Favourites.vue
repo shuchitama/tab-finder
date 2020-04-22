@@ -7,9 +7,10 @@
     </div>
     <table>
       <tr>
-        <th>SONG</th>
-        <th>ARTIST</th>
-        <th>CHORDS</th>
+        <th style="width:260px">SONG</th>
+        <th style="width:260px">ARTIST</th>
+        <th style="width:230px">CHORDS</th>
+        <th style="width:100px"></th>
       </tr>
       <tr>
         <td>
@@ -29,15 +30,62 @@
             {{ song.chords.join(", ") }}
           </div>
         </td>
+        <td>
+          <div class="toggleFav" v-bind:key="song.id" v-for="song in favList">
+            <div @click="toggleFavourite(song.id)">
+              <b-icon v-if="isFave(song.id)" icon="heart-fill"></b-icon>
+              <b-icon v-else icon="heart"></b-icon>
+            </div>
+          </div>
+        </td>
       </tr>
     </table>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "Favourites",
-  props: ["favList"]
+  props: ["favList"],
+  data() {
+    return {
+      allFavourites: []
+    };
+  },
+  created() {
+    axios.get("http://localhost:3001/api/usersongs").then(response => {
+      this.allFavourites = response.data.map(el => el.song_id);
+    });
+  },
+  methods: {
+    toggleFavourite(id) {
+      if (this.allFavourites.includes(id)) {
+        this.deleteFav(id);
+      } else {
+        this.addToFav(id);
+      }
+    },
+    addToFav(id) {
+      if (this.$store.state.login === true) {
+        axios
+          .put("http://localhost:3001/api/usersongs", { userid: 1, songid: id })
+          .catch(error => console.log(error));
+        this.allFavourites.push(id);
+      } else {
+        alert("Please log in to add the song to your favourites!");
+      }
+    },
+    deleteFav(id) {
+      axios
+        .delete("http://localhost:3001/api/usersongs", { data: {songid: id} })
+        .catch(error => console.log(error));
+      this.$props.favList = this.$props.favList.filter(el => el !== id);
+    },
+    isFave(id) {
+      return this.allFavourites.includes(id);
+    }
+  }
 };
 </script>
 
@@ -102,5 +150,9 @@ td {
 
 .artist {
   height: 40px;
+}
+
+.toggleFav:hover {
+  cursor: pointer;
 }
 </style>
