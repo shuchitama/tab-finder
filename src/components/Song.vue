@@ -19,11 +19,11 @@
       class="favourite" 
       @click="toggleFavourite(song.id)">
         <div v-if="this.$store.state.login === false">
-          <b-icon animation="fade" icon="heart"></b-icon>
+          <b-icon icon="heart"></b-icon>
         </div>
         <div v-else>
-          <b-icon v-if="isFave(song.id)" animation="fade" icon="heart-fill"></b-icon>
-          <b-icon v-else animation="fade" icon="heart"></b-icon>
+          <b-icon v-if="isFave(song.id)" icon="heart-fill"></b-icon>
+          <b-icon v-else icon="heart"></b-icon>
         </div>
       </div>
     </div>
