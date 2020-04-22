@@ -2,9 +2,11 @@
   <div class="about">
     <h1>About us</h1>
     <p>This app was created by Mariana Dominguez and Shuchita Mahey.</p>
-    <p>I hope all you beginners out there have fun!</p>
+    <p>We hope all you guitar players out there have fun!</p>
     <h4>Tech Stack:</h4>
-    <p>Vue.js, Bootstrap, Node.js</p>
+    <p>Front-end: Vue.js, Bootstrap</p>
+    <p>Back-end: Node.js</p>
+    <p>Database: PostgreSQL</p>
   </div>
 </template>
 

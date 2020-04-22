@@ -30,6 +30,7 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
+
 h2 {
   background-color: #717478;
   color: #1b2530;
@@ -56,8 +57,11 @@ h3 {
 
 #chord:hover {
   background-color: #abc4b8;
-  border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+#chord {
+  margin: 10px;
 }
 
 #example {
