@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>CHORDS LIBRARY</h1>
+    <h2>CHORDS LIBRARY</h2>
     <h3>How to read</h3>
     <img id="example" src="../../public/amajor.png" />
     <img id="example" src="../../public/fmajor.png" />
@@ -30,10 +30,15 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
-h1 {
+h2 {
   background-color: #717478;
   color: #1b2530;
 }
+
+h3 {
+  margin: 20px;
+}
+
 .about {
   font-family: Oswald;
   background-color: #7c9388;

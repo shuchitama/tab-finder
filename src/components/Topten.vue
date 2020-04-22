@@ -43,13 +43,13 @@ export default {
     axios.get("http://localhost:3001/api/songs").then(res => {
       const allSongs = res.data;
       this.TopTenSongs = allSongs.filter(song => this.topten.includes(song.id));
-    })
+    });
   }
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 
 .topten {
   background-color: #e7e3e3;
@@ -90,6 +90,7 @@ td {
   color: #4a4a4a;
   height: 40px;
 }
+
 .artist {
   height: 40px;
 }

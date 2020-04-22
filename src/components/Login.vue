@@ -18,14 +18,12 @@
             <b-form-input id="password-input" type="password"></b-form-input>
           </b-form-group>
         </form>
-
         <template v-slot:modal-footer>
           <b-button
             variant="success"
             class="float-right"
             size="sm"
-            @click="login"
-          >
+            @click="login">
             Sign in
           </b-button>
         </template>
@@ -54,11 +52,12 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 
 a {
   font-family: Oswald;
 }
+
 .login:hover {
   color: green;
   border: solid;

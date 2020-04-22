@@ -8,14 +8,14 @@
           @click="addChord(chord.id)"
           v-bind:key="chord.id"
           v-for="chord in chords"
-        >{{chord.name}}</button>
+        >
+          {{ chord.name }}
+        </button>
       </div>
       <br />
       <div id="buttons">
-        <b-button 
-        @click="submitChords"
-        class="submit-button">
-        Let's get some songs!
+        <b-button @click="submitChords" class="submit-button">
+          Let's get some songs!
         </b-button>
         <span>wwww</span>
         <b-button 
@@ -80,17 +80,19 @@ export default {
       return chord.selected;
     },
     submitChords() {
-      this.$emit('chords-submitted', this.showChords())
+      this.$emit("chords-submitted", this.showChords());
     },
     clearChords() {
-      this.selectChords.forEach(element => {element.selected = false})
+      this.selectChords.forEach(element => {
+        element.selected = false;
+      });
     }
   }
 };
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 
 .card {
   border: none;

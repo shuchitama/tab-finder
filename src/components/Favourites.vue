@@ -40,11 +40,14 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
+
 h3 {
   font-family: Oswald;
   font-size: 20px;
+  letter-spacing: 1px;
 }
+
 span {
   width: 300px;
   height: 1px;
@@ -66,10 +69,6 @@ span {
 table {
   margin: 0 auto;
   margin-top: 30px;
-}
-
-h3 {
-  letter-spacing: 1px;
 }
 
 th {
@@ -95,6 +94,7 @@ td {
   color: #4a4a4a;
   height: 40px;
 }
+
 .artist {
   height: 40px;
 }

@@ -65,7 +65,6 @@ h2 {
   font-family: Oswald;
   vertical-align: middle;
   display: inline-block;
-
 }
 
 img {

@@ -8,11 +8,8 @@
   </div>
 </template>
 
-<script>
-</script>
-
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 
 .about {
   background-color: #abc4b8;
@@ -22,8 +19,8 @@
   height: 500px;
 }
 
-h1, h4 {
+h1,
+h4 {
   color: #2e2e2e;
-
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <Chords v-bind:chords="chords" v-on:chords-submitted="passToParent"/>
+    <Chords v-bind:chords="chords" v-on:chords-submitted="passToParent" />
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     passToParent(payload) {
-      this.$emit('chords-submitted', payload)
+      this.$emit("chords-submitted", payload);
     }
   }
 };

@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <div id="nav" srcset="img/615@2x.png 2x, img/615@3x.png 3x" class="layer">
+    <div id="nav" class="layer">
       <section id="tab-finder">
         <span id="tab">TAB</span>
         <span id="finder">FINDER</span>
@@ -8,14 +8,12 @@
       <section id="find-tabs">
         <span>Find tabs based on the chords you know!</span>
       </section>
-
       <section id="links">
         <router-link to="/">Home</router-link> |
         <router-link to="/library">Library</router-link> |
         <router-link to="/profile">Profile</router-link> |
         <router-link to="/about">About</router-link>
       </section>
-
     </div>
   </header>
 </template>
@@ -27,14 +25,11 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 
-/* @media screen  */
 #nav {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* width: auto; */
   height: 350px;
   object-fit: contain;
   background-image: url("../../public/615@2x.png");
@@ -46,8 +41,6 @@ export default {
 }
 
 #tab-finder {
-  /* width: 235px;
-  height: 74px; */
   object-fit: contain;
   margin-top: 90px;
   margin-left: 267px;
@@ -59,23 +52,18 @@ export default {
   font-style: normal;
   line-height: normal;
   letter-spacing: 1.67px;
-  /* text-align: center; */
   color: #ffe1b1;
 }
+
 #tab {
   font-weight: 300;
   color: #ffffff;
 }
 
 #find-tabs {
-  /* width: 268px; */
-  /* height: 16px; */
   font-family: Oswald;
   font-size: 22px;
-  /* font-weight: bold; */
-  /* margin-top: 10px; */
   margin-left: 267px;
-  /* margin-bottom: 93px; */
   margin-right: 266px;
   font-stretch: normal;
   font-style: normal;
