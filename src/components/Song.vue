@@ -82,7 +82,7 @@ export default {
       return this.allFavourites.includes(id);
     },
     percentMatch(chords) {
-      return chords.length/this.$props.chordIDs.length * 100
+      return Math.round(chords.length/this.$props.chordIDs.length * 100)
     }
   }
 };
