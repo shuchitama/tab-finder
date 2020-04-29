@@ -17,3 +17,11 @@ To run the app, use the following commands:
 ### Searching for songs
 
 !["Searching"](https://github.com/shuchitama/tab-finder/blob/master/docs/search.gif?raw=true)
+
+### List of favourites
+
+!["Favourites"](https://github.com/shuchitama/tab-finder/blob/master/docs/favourites.png?raw=true)
+
+### Library
+
+!["Library"](https://github.com/shuchitama/tab-finder/blob/master/docs/library.png?raw=true)
