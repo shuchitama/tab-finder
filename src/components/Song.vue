@@ -92,13 +92,13 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 
 .song-card {
-  width: 295px;
+  width: 330px;
   height: 87px;
   background-color: #c9d3ce;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 20px;
+  padding: 15px;
   margin-top: -18px;
 }
 
@@ -129,7 +129,7 @@ export default {
   height: 20px;
   margin-top: -3px;
   margin-left: 10px;
-  align-self: center;
+  align-self: flex-end;
   color: #889c91;
   cursor: pointer;
 }
@@ -141,8 +141,8 @@ export default {
   font-weight: bold;
   font-stretch: normal;
   color: #889c91;
-  padding-top: 15px;
-  padding-right: 20px;
+  padding-top: 25px;
+  text-align: right;
 }
 
 .favAndMatch {
@@ -169,10 +169,10 @@ export default {
 
 .artist,
 .chords {
-  width: 160px;
+  width: 207px;
   height: 30px;
   font-family: inherit;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
