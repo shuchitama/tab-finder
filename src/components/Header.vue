@@ -83,6 +83,10 @@ export default {
   margin-top: 93px;
   padding-top: 5px;
   background-blend-mode: multiply;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  );
 }
 </style>

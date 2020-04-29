@@ -18,9 +18,7 @@
           Let's get some songs!
         </b-button>
         <span>wwww</span>
-        <b-button 
-          class="clear-button" 
-          @click="clearChords">
+        <b-button class="clear-button" @click="clearChords">
           Clear selection
         </b-button>
       </div>
@@ -162,7 +160,5 @@ span {
   font-family: Oswald;
   font-size: 24px;
   text-align: center;
-
 }
-
 </style>

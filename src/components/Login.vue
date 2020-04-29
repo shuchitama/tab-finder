@@ -23,7 +23,8 @@
             variant="success"
             class="float-right"
             size="sm"
-            @click="login">
+            @click="login"
+          >
             Sign in
           </b-button>
         </template>
@@ -58,7 +59,8 @@ a {
   font-family: Oswald;
 }
 
-#logout-button, #login-button {
+#logout-button,
+#login-button {
   width: 80px;
   height: 30px;
   border-radius: 3px;

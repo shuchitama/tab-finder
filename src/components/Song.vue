@@ -3,7 +3,7 @@
     <br />
     <div class="song-card">
       <section class="song-info">
-        <div >
+        <div>
           <a v-bind:href="song.url" target="_blank">
             <p class="title">{{ song.title }}</p>
           </a>
@@ -11,14 +11,10 @@
         <div class="artist">
           {{ song.artist }}
         </div>
-        <div class="chords">
-          Chords: {{ song.chords.join(", ") }}
-        </div>
+        <div class="chords">Chords: {{ song.chords.join(", ") }}</div>
       </section>
       <section class="favAndMatch">
-        <div 
-        class="favourite" 
-        @click="toggleFavourite(song.id)">
+        <div class="favourite" @click="toggleFavourite(song.id)">
           <div v-if="this.$store.state.login === false">
             <b-icon icon="heart"></b-icon>
           </div>
@@ -27,9 +23,7 @@
             <b-icon v-else icon="heart"></b-icon>
           </div>
         </div>
-        <div class="percent-match">
-          {{percentMatch(song.chords)}}% MATCH
-        </div>
+        <div class="percent-match">{{ percentMatch(song.chords) }}% MATCH</div>
       </section>
     </div>
   </article>
@@ -70,10 +64,12 @@ export default {
     },
     deleteFav(id) {
       if (this.$store.state.login === true) {
-      axios
-        .delete("http://localhost:3001/api/usersongs", { data: {songid: id} })
-        .catch(error => console.log(error));
-      this.allFavourites = this.allFavourites.filter(el => el !== id);
+        axios
+          .delete("http://localhost:3001/api/usersongs", {
+            data: { songid: id }
+          })
+          .catch(error => console.log(error));
+        this.allFavourites = this.allFavourites.filter(el => el !== id);
       } else {
         alert("Please log in to add the song to your favourites!");
       }
@@ -82,7 +78,7 @@ export default {
       return this.allFavourites.includes(id);
     },
     percentMatch(chords) {
-      return Math.round(chords.length/this.$props.chordIDs.length * 100)
+      return Math.round((chords.length / this.$props.chordIDs.length) * 100);
     }
   }
 };
