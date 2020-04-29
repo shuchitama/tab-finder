@@ -11,7 +11,7 @@
     <div id="login-popup">
       <b-modal id="modal-prevent-closing" ref="modal" title="Sign in" size="sm">
         <form ref="form" @submit.stop.prevent="handleSubmit">
-          <b-form-group label="Name">
+          <b-form-group label="Username">
             <b-form-input id="name-input"></b-form-input>
           </b-form-group>
           <b-form-group label="Password" label-for="password-input">
