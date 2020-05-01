@@ -1,6 +1,23 @@
 <template>
   <div class="sidebar">
-    <Chords v-bind:chords="chords" v-on:chords-submitted="passToParent" />
+    <b-card header="CHOOSE CHORDS TO GET STARTED">
+      <div class="grid">
+        <Chords 
+        v-bind:chords="chords" 
+        v-on:chords-submitted="passToParent" 
+        v-on:addChord="addChord"
+        />
+      </div>
+      <div id="buttons">
+        <b-button @click="submitChords" class="submit-button">
+          Let's get some songs!
+        </b-button>
+        <span>wwww</span>
+        <b-button class="clear-button" @click="clearChords">
+          Clear selection
+        </b-button>
+      </div>
+    </b-card>
   </div>
 </template>
 
@@ -81,8 +98,42 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
+
 .sidebar {
   width: 100%;
   height: 20%;
 }
+
+
+.card {
+  border: none;
+}
+span {
+  color: white;
+}
+
+.card-header {
+  font-size: 22px;
+}
+
+.card-header {
+  font-family: Oswald;
+  background-blend-mode: multiply;
+  background-image: linear-gradient(to bottom, #7c9388, #7c9388);
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+#buttons {
+  margin: 20px;
+}
+
 </style>

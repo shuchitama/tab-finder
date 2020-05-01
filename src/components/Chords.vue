@@ -1,28 +1,16 @@
 <template>
   <section>
-    <b-card header="CHOOSE CHORDS TO GET STARTED">
-      <div class="grid">
+      
         <button
           class="chord"
-          v-bind:class="{ active: isActive(chord.id) }"
+          
           @click="addChord(chord.id)"
           v-bind:key="chord.id"
           v-for="chord in chords"
         >
           {{ chord.name }}
         </button>
-      </div>
-      <br />
-      <div id="buttons">
-        <b-button @click="submitChords" class="submit-button">
-          Let's get some songs!
-        </b-button>
-        <span>wwww</span>
-        <b-button class="clear-button" @click="clearChords">
-          Clear selection
-        </b-button>
-      </div>
-    </b-card>
+      
   </section>
 </template>
 
@@ -30,6 +18,9 @@
 export default {
   name: "Chords",
   props: ["chords"],
+
+  // v-bind:class="{ active: isActive(chord.id) }"
+  
   // data() {
   //   return {
   //     selectChords: [
@@ -61,30 +52,21 @@ export default {
   //   };
   // },
   methods: {
-    // addChord(id) {
-    //   const chord = this.selectChords.find(element => element.id === id);
-    //   chord.selected = !chord.selected;
-    // },
-    // showChords() {
-    //   const selectedChordsObj = this.selectChords.filter(
-    //     element => element.selected === true
-    //   );
-    //   const selectedChordIDs = [];
-    //   selectedChordsObj.map(element => selectedChordIDs.push(element.id));
-    //   return selectedChordIDs;
-    // },
+    addChord(id) {
+      this.$emit("addChord", id);
+    },
     // isActive(id) {
     //   const chord = this.selectChords.find(element => element.id === id);
     //   return chord.selected;
     // },
-    // submitChords() {
-    //   this.$emit("chords-submitted", this.showChords());
-    // },
-    // clearChords() {
-    //   this.selectChords.forEach(element => {
-    //     element.selected = false;
-    //   });
-    // }
+    submitChords() {
+      this.$emit("chords-submitted", this.showChords());
+    },
+    clearChords() {
+      this.selectChords.forEach(element => {
+        element.selected = false;
+      });
+    }
   }
 };
 </script>
@@ -92,31 +74,6 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 
-.card {
-  border: none;
-}
-span {
-  color: white;
-}
-
-.card-header {
-  font-size: 22px;
-}
-
-.card-header {
-  font-family: Oswald;
-  background-blend-mode: multiply;
-  background-image: linear-gradient(to bottom, #7c9388, #7c9388);
-}
-
-.grid {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: auto auto auto auto auto auto auto auto;
-  grid-template-rows: auto auto;
-  column-gap: 20px;
-  row-gap: 20px;
-}
 
 .chord {
   border-radius: 4px;
@@ -135,10 +92,6 @@ span {
 
 .active {
   background-color: #a6c7b7;
-}
-
-#buttons {
-  margin: 20px;
 }
 
 .submit-button {
