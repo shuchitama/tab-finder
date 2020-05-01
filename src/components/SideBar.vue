@@ -104,7 +104,6 @@ export default {
   height: 20%;
 }
 
-
 .card {
   border: none;
 }
@@ -131,7 +130,6 @@ span {
 #buttons {
   margin: 20px;
 }
-
 
 .submit-button {
   width: 300px;
