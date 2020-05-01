@@ -5,8 +5,6 @@
           class="chord"
           
           @click="addChord(chord.id)"
-          v-bind:key="chord.id"
-          v-for="chord in chords"
         >
           {{ chord.name }}
         </button>
@@ -17,7 +15,7 @@
 <script>
 export default {
   name: "Chords",
-  props: ["chords"],
+  props: ["chord"],
 
   // v-bind:class="{ active: isActive(chord.id) }"
   

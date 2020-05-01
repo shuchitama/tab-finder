@@ -2,11 +2,13 @@
   <div class="sidebar">
     <b-card header="CHOOSE CHORDS TO GET STARTED">
       <div class="grid">
-        <Chords 
-        v-bind:chords="chords" 
-        v-on:chords-submitted="passToParent" 
-        v-on:addChord="addChord"
-        />
+        <div v-for="chord in chords" v-bind:key="chord.id" >
+          <Chords 
+          v-bind:chord="chord" 
+          v-on:chords-submitted="passToParent" 
+          v-on:addChord="addChord"
+          />
+        </div>
       </div>
       <div id="buttons">
         <b-button @click="submitChords" class="submit-button">
