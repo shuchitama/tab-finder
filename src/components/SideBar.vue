@@ -5,6 +5,7 @@
         <div v-for="chord in chords" v-bind:key="chord.id" >
           <Chords 
           v-bind:chord="chord" 
+          v-bind:selectChords="selectChords"
           v-on:addChord="addChord"
           />
         </div>
@@ -108,7 +109,7 @@ export default {
   border: none;
 }
 span {
-  color: white;
+  opacity: 0
 }
 
 .card-header {
