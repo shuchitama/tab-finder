@@ -27,7 +27,6 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 
 
 .chord {
@@ -36,12 +35,8 @@ export default {
   width: 80px;
   height: 40px;
   font-size: 18px;
-  /* font-weight: bold; */
   color: #878787;
   font-family: Oswald;
-  /* padding: 2% 5%; */
-  /* margin: 2% 2%; */
-  /* background-color: rgb(9, 53, 9); */
   background-color: #dddddd;
 }
 
