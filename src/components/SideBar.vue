@@ -5,7 +5,6 @@
         <div v-for="chord in chords" v-bind:key="chord.id" >
           <Chords 
           v-bind:chord="chord" 
-          v-on:chords-submitted="passToParent" 
           v-on:addChord="addChord"
           />
         </div>
@@ -68,9 +67,6 @@ export default {
     });
   },
   methods: {
-    passToParent(payload) {
-      this.$emit("chords-submitted", payload);
-    },
     addChord(id) {
       const chord = this.selectChords.find(element => element.id === id);
       chord.selected = !chord.selected;
@@ -117,9 +113,6 @@ span {
 
 .card-header {
   font-size: 22px;
-}
-
-.card-header {
   font-family: Oswald;
   background-blend-mode: multiply;
   background-image: linear-gradient(to bottom, #7c9388, #7c9388);
@@ -138,4 +131,25 @@ span {
   margin: 20px;
 }
 
+
+.submit-button {
+  width: 300px;
+  height: 50px;
+  border-radius: 3px;
+  background-color: #233d32;
+  color: #ffe1b1;
+  font-family: Oswald;
+  font-size: 24px;
+}
+
+.clear-button {
+  width: 300px;
+  height: 50px;
+  border: solid 1.5px #233d32;
+  color: #233d32;
+  background-color: #ffffff;
+  font-family: Oswald;
+  font-size: 24px;
+  text-align: center;
+}
 </style>

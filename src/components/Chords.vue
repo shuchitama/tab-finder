@@ -57,9 +57,6 @@ export default {
     //   const chord = this.selectChords.find(element => element.id === id);
     //   return chord.selected;
     // },
-    submitChords() {
-      this.$emit("chords-submitted", this.showChords());
-    },
     clearChords() {
       this.selectChords.forEach(element => {
         element.selected = false;
@@ -92,24 +89,4 @@ export default {
   background-color: #a6c7b7;
 }
 
-.submit-button {
-  width: 300px;
-  height: 50px;
-  border-radius: 3px;
-  background-color: #233d32;
-  color: #ffe1b1;
-  font-family: Oswald;
-  font-size: 24px;
-}
-
-.clear-button {
-  width: 300px;
-  height: 50px;
-  border: solid 1.5px #233d32;
-  color: #233d32;
-  background-color: #ffffff;
-  font-family: Oswald;
-  font-size: 24px;
-  text-align: center;
-}
 </style>
