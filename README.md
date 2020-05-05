@@ -2,6 +2,8 @@
 
 This app allows a guitar learner to search by chords that they know how to play, and get back a list of songs that they can play with just the chords they know.
 
+This project was created and published by me and [Mariana](https://github.com/maridoh13) as part of our learnings at Lighthouse Labs.
+
 ## Project setup
 
 The database used to run this app is accessed from this repository: https://github.com/shuchitama/tab-finder-api.
