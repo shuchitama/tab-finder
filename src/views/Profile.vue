@@ -23,27 +23,27 @@ export default {
   data() {
     return {
       songIDs: [],
-      favList: []
+      favList: [],
     };
   },
   components: {
-    Favourites
+    Favourites,
   },
   created() {
     axios
-      .get("http://localhost:3001/api/usersongs")
-      .then(response => {
-        this.songIDs = response.data.map(el => el.song_id);
+      .get("/api/usersongs")
+      .then((response) => {
+        this.songIDs = response.data.map((el) => el.song_id);
       })
       .then(
-        axios.get("http://localhost:3001/api/songs").then(res => {
+        axios.get("/api/songs").then((res) => {
           const allSongs = res.data;
-          this.favList = allSongs.filter(song =>
+          this.favList = allSongs.filter((song) =>
             this.songIDs.includes(song.id)
           );
         })
       );
-  }
+  },
 };
 </script>
 

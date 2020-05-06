@@ -37,16 +37,18 @@ export default {
   name: "TopTen",
   data() {
     return {
-      TopTenSongs: []
+      TopTenSongs: [],
     };
   },
   props: ["topten"],
   created() {
-    axios.get("http://localhost:3001/api/songs").then(res => {
+    axios.get("/api/songs").then((res) => {
       const allSongs = res.data;
-      this.TopTenSongs = allSongs.filter(song => this.topten.includes(song.id));
+      this.TopTenSongs = allSongs.filter((song) =>
+        this.topten.includes(song.id)
+      );
     });
-  }
+  },
 };
 </script>
 

@@ -36,12 +36,12 @@ export default {
   props: ["song", "chordIDs"],
   data() {
     return {
-      allFavourites: []
+      allFavourites: [],
     };
   },
   created() {
-    axios.get("http://localhost:3001/api/usersongs").then(response => {
-      this.allFavourites = response.data.map(el => el.song_id);
+    axios.get("/api/usersongs").then((response) => {
+      this.allFavourites = response.data.map((el) => el.song_id);
     });
   },
   methods: {
@@ -55,8 +55,8 @@ export default {
     addToFav(id) {
       if (this.$store.state.login === true) {
         axios
-          .put("http://localhost:3001/api/usersongs", { userid: 1, songid: id })
-          .catch(error => console.log(error));
+          .put("/api/usersongs", { userid: 1, songid: id })
+          .catch((error) => console.log(error));
         this.allFavourites.push(id);
       } else {
         alert("Please log in to add the song to your favourites!");
@@ -65,11 +65,11 @@ export default {
     deleteFav(id) {
       if (this.$store.state.login === true) {
         axios
-          .delete("http://localhost:3001/api/usersongs", {
-            data: { songid: id }
+          .delete("/api/usersongs", {
+            data: { songid: id },
           })
-          .catch(error => console.log(error));
-        this.allFavourites = this.allFavourites.filter(el => el !== id);
+          .catch((error) => console.log(error));
+        this.allFavourites = this.allFavourites.filter((el) => el !== id);
       } else {
         alert("Please log in to add the song to your favourites!");
       }
@@ -79,8 +79,8 @@ export default {
     },
     percentMatch(chords) {
       return Math.round((chords.length / this.$props.chordIDs.length) * 100);
-    }
-  }
+    },
+  },
 };
 </script>
 

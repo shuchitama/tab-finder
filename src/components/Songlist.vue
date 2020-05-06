@@ -24,7 +24,7 @@ export default {
   name: "songlist",
   components: {
     Song,
-    Login
+    Login,
   },
   props: ["chordIDs"],
   data() {
@@ -32,7 +32,7 @@ export default {
       AllChords: [],
       AllSongs: [],
       filteredSongs: [],
-      resultCount: ""
+      resultCount: "",
     };
   },
   watch: {
@@ -42,7 +42,7 @@ export default {
         this.$props.chordIDs
       );
       this.filteredSongs = this.AllSongs.filter(
-        song =>
+        (song) =>
           arrOfNames.length === _.uniq(_.concat(song.chords, arrOfNames)).length
       );
     },
@@ -55,24 +55,24 @@ export default {
       } else {
         this.resultCount = `${num} results found:`;
       }
-    }
+    },
   },
   created() {
-    axios.get("http://localhost:3001/api/songs").then(res => {
+    axios.get("/api/songs").then((res) => {
       this.AllSongs = res.data;
     }),
-      axios.get("http://localhost:3001/api/chords").then(res => {
+      axios.get("/api/chords").then((res) => {
         this.AllChords = res.data;
       });
   },
   methods: {
     chordIDtoName(chordList, arrOfIDs) {
-      return arrOfIDs.map(id => {
-        const chord = chordList.find(element => element.id === id);
+      return arrOfIDs.map((id) => {
+        const chord = chordList.find((element) => element.id === id);
         return chord.name;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

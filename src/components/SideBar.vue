@@ -2,11 +2,11 @@
   <div class="sidebar">
     <b-card header="CHOOSE CHORDS TO GET STARTED">
       <div class="grid">
-        <div v-for="chord in chords" v-bind:key="chord.id" >
-          <Chords 
-          v-bind:chord="chord" 
-          v-bind:selectChords="selectChords"
-          v-on:addChord="addChord"
+        <div v-for="chord in chords" v-bind:key="chord.id">
+          <Chords
+            v-bind:chord="chord"
+            v-bind:selectChords="selectChords"
+            v-on:addChord="addChord"
           />
         </div>
       </div>
@@ -29,7 +29,7 @@ import axios from "axios";
 export default {
   name: "SideBar",
   components: {
-    Chords
+    Chords,
   },
   data() {
     return {
@@ -58,41 +58,41 @@ export default {
         { id: 21, selected: false },
         { id: 22, selected: false },
         { id: 23, selected: false },
-        { id: 24, selected: false }
-      ]
+        { id: 24, selected: false },
+      ],
     };
   },
   created() {
-    axios.get("http://localhost:3001/api/chords").then(res => {
+    axios.get("/api/chords").then((res) => {
       this.chords = res.data;
     });
   },
   methods: {
     addChord(id) {
-      const chord = this.selectChords.find(element => element.id === id);
+      const chord = this.selectChords.find((element) => element.id === id);
       chord.selected = !chord.selected;
     },
     showChords() {
       const selectedChordsObj = this.selectChords.filter(
-        element => element.selected === true
+        (element) => element.selected === true
       );
       const selectedChordIDs = [];
-      selectedChordsObj.map(element => selectedChordIDs.push(element.id));
+      selectedChordsObj.map((element) => selectedChordIDs.push(element.id));
       return selectedChordIDs;
     },
     isActive(id) {
-      const chord = this.selectChords.find(element => element.id === id);
+      const chord = this.selectChords.find((element) => element.id === id);
       return chord.selected;
     },
     submitChords() {
       this.$emit("chords-submitted", this.showChords());
     },
     clearChords() {
-      this.selectChords.forEach(element => {
+      this.selectChords.forEach((element) => {
         element.selected = false;
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -108,7 +108,7 @@ export default {
   border: none;
 }
 span {
-  opacity: 0
+  opacity: 0;
 }
 
 .card-header {
