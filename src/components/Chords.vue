@@ -27,8 +27,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 .chord {
   border-radius: 4px;
   border: black;
@@ -43,5 +41,4 @@ export default {
 .active {
   background-color: #a6c7b7;
 }
-
 </style>

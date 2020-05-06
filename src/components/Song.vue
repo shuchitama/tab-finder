@@ -36,12 +36,12 @@ export default {
   props: ["song", "chordIDs"],
   data() {
     return {
-      allFavourites: [],
+      allFavourites: []
     };
   },
   created() {
-    axios.get("/api/usersongs").then((response) => {
-      this.allFavourites = response.data.map((el) => el.song_id);
+    axios.get("/api/usersongs").then(response => {
+      this.allFavourites = response.data.map(el => el.song_id);
     });
   },
   methods: {
@@ -56,7 +56,7 @@ export default {
       if (this.$store.state.login === true) {
         axios
           .put("/api/usersongs", { userid: 1, songid: id })
-          .catch((error) => console.log(error));
+          .catch(error => console.log(error));
         this.allFavourites.push(id);
       } else {
         alert("Please log in to add the song to your favourites!");
@@ -66,10 +66,10 @@ export default {
       if (this.$store.state.login === true) {
         axios
           .delete("/api/usersongs", {
-            data: { songid: id },
+            data: { songid: id }
           })
-          .catch((error) => console.log(error));
-        this.allFavourites = this.allFavourites.filter((el) => el !== id);
+          .catch(error => console.log(error));
+        this.allFavourites = this.allFavourites.filter(el => el !== id);
       } else {
         alert("Please log in to add the song to your favourites!");
       }
@@ -79,8 +79,8 @@ export default {
     },
     percentMatch(chords) {
       return Math.round((chords.length / this.$props.chordIDs.length) * 100);
-    },
-  },
+    }
+  }
 };
 </script>
 

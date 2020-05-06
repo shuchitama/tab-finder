@@ -17,14 +17,14 @@ import axios from "axios";
 export default {
   data() {
     return {
-      chords: [],
+      chords: []
     };
   },
   created() {
-    axios.get("/api/chords").then((res) => {
+    axios.get("/api/chords").then(res => {
       this.chords = res.data;
     });
-  },
+  }
 };
 </script>
 

@@ -20,7 +20,7 @@ Vue.config.productionTip = false;
 
 const store = new Vuex.Store({
   state: {
-    login: false,
+    login: false
   },
   mutations: {
     doLogin(state) {
@@ -28,12 +28,12 @@ const store = new Vuex.Store({
     },
     doLogout(state) {
       state.login = false;
-    },
-  },
+    }
+  }
 });
 
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: h => h(App)
 }).$mount("#app");
