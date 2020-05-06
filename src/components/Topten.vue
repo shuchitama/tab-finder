@@ -16,14 +16,14 @@
           </div>
         </td>
         <td>
-          <div class="artist" v-bind:key="song.id" v-for="song in TopTenSongs">
-            {{ song.artist }}
-          </div>
+          <div class="artist" v-bind:key="song.id" v-for="song in TopTenSongs">{{ song.artist }}</div>
         </td>
         <td>
-          <div class="chords" v-bind:key="song.id" v-for="song in TopTenSongs">
-            {{ song.chords.join(", ") }}
-          </div>
+          <div
+            class="chords"
+            v-bind:key="song.id"
+            v-for="song in TopTenSongs"
+          >{{ song.chords.join(", ") }}</div>
         </td>
       </tr>
     </table>
@@ -42,7 +42,7 @@ export default {
   },
   props: ["topten"],
   created() {
-    axios.get("/api/songs").then(res => {
+    axios.get("https://tab-finder-api.herokuapp.com/api/songs").then(res => {
       const allSongs = res.data;
       this.TopTenSongs = allSongs.filter(song => this.topten.includes(song.id));
     });

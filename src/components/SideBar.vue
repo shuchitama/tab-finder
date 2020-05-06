@@ -3,21 +3,13 @@
     <b-card header="CHOOSE CHORDS TO GET STARTED">
       <div class="grid">
         <div v-for="chord in chords" v-bind:key="chord.id">
-          <Chords
-            v-bind:chord="chord"
-            v-bind:selectChords="selectChords"
-            v-on:addChord="addChord"
-          />
+          <Chords v-bind:chord="chord" v-bind:selectChords="selectChords" v-on:addChord="addChord" />
         </div>
       </div>
       <div id="buttons">
-        <b-button @click="submitChords" class="submit-button">
-          Let's get some songs!
-        </b-button>
+        <b-button @click="submitChords" class="submit-button">Let's get some songs!</b-button>
         <span>wwww</span>
-        <b-button class="clear-button" @click="clearChords">
-          Clear selection
-        </b-button>
+        <b-button class="clear-button" @click="clearChords">Clear selection</b-button>
       </div>
     </b-card>
   </div>
@@ -63,7 +55,7 @@ export default {
     };
   },
   created() {
-    axios.get("/api/chords").then(res => {
+    axios.get("https://tab-finder-api.herokuapp.com/api/chords").then(res => {
       this.chords = res.data;
     });
   },

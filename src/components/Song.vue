@@ -8,9 +8,7 @@
             <p class="title">{{ song.title }}</p>
           </a>
         </div>
-        <div class="artist">
-          {{ song.artist }}
-        </div>
+        <div class="artist">{{ song.artist }}</div>
         <div class="chords">Chords: {{ song.chords.join(", ") }}</div>
       </section>
       <section class="favAndMatch">
@@ -40,9 +38,11 @@ export default {
     };
   },
   created() {
-    axios.get("/api/usersongs").then(response => {
-      this.allFavourites = response.data.map(el => el.song_id);
-    });
+    axios
+      .get("https://tab-finder-api.herokuapp.com/api/usersongs")
+      .then(response => {
+        this.allFavourites = response.data.map(el => el.song_id);
+      });
   },
   methods: {
     toggleFavourite(id) {
@@ -55,7 +55,10 @@ export default {
     addToFav(id) {
       if (this.$store.state.login === true) {
         axios
-          .put("/api/usersongs", { userid: 1, songid: id })
+          .put("https://tab-finder-api.herokuapp.com/api/usersongs", {
+            userid: 1,
+            songid: id
+          })
           .catch(error => console.log(error));
         this.allFavourites.push(id);
       } else {
@@ -65,7 +68,7 @@ export default {
     deleteFav(id) {
       if (this.$store.state.login === true) {
         axios
-          .delete("/api/usersongs", {
+          .delete("https://tab-finder-api.herokuapp.com/api/usersongs", {
             data: { songid: id }
           })
           .catch(error => console.log(error));

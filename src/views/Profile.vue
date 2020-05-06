@@ -31,17 +31,19 @@ export default {
   },
   created() {
     axios
-      .get("/api/usersongs")
+      .get("https://tab-finder-api.herokuapp.com/api/usersongs")
       .then(response => {
         this.songIDs = response.data.map(el => el.song_id);
       })
       .then(
-        axios.get("/api/songs").then(res => {
-          const allSongs = res.data;
-          this.favList = allSongs.filter(song =>
-            this.songIDs.includes(song.id)
-          );
-        })
+        axios
+          .get("https://tab-finder-api.herokuapp.com/api/songs")
+          .then(res => {
+            const allSongs = res.data;
+            this.favList = allSongs.filter(song =>
+              this.songIDs.includes(song.id)
+            );
+          })
       );
   }
 };

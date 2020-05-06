@@ -58,10 +58,10 @@ export default {
     }
   },
   created() {
-    axios.get("/api/songs").then(res => {
+    axios.get("https://tab-finder-api.herokuapp.com/api/songs").then(res => {
       this.AllSongs = res.data;
     }),
-      axios.get("/api/chords").then(res => {
+      axios.get("https://tab-finder-api.herokuapp.com/api/chords").then(res => {
         this.AllChords = res.data;
       });
   },
