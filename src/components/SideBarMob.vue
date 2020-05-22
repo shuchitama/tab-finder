@@ -8,7 +8,7 @@
       </div>
       <div id="buttons">
         <b-button @click="submitChords" class="submit-button">Let's get some songs!</b-button>
-        <span>ww</span>
+        <span>w</span>
         <b-button class="clear-button" @click="clearChords">Clear selection</b-button>
       </div>
     </b-card>
@@ -93,7 +93,6 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&display=swap");
 
 .sidebar {
-  /* width: 450px; */
   height: 20%;
 }
 
@@ -121,12 +120,12 @@ span {
 }
 
 #buttons {
-  margin: 20px;
+  margin-top: 20px;
 }
 
 .submit-button {
   width: 150px;
-  height: 50px;
+  height: 40px;
   border-radius: 3px;
   background-color: #233d32;
   color: #ffe1b1;
@@ -136,7 +135,7 @@ span {
 
 .clear-button {
   width: 150px;
-  height: 50px;
+  height: 40px;
   border: solid 1.5px #233d32;
   color: #233d32;
   background-color: #ffffff;

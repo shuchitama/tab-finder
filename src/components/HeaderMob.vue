@@ -39,12 +39,10 @@ export default {
 }
 
 #tab-finder {
+  margin-top: 20px;
   font-family: Oswald;
   font-size: 30px;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 1.67px;
   color: #ffe1b1;
 }
@@ -55,6 +53,7 @@ export default {
 }
 
 #find-tabs {
+  margin: 10px;
   font-family: Oswald;
   font-size: 15px;
   font-stretch: normal;
@@ -66,13 +65,13 @@ export default {
 }
 
 #links {
-  height: 50px;
+  margin-top: 53px;
+  height: 40px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   letter-spacing: 0.75px;
   text-align: center;
   color: #71ad90;
-  margin-top: 93px;
   padding-top: 5px;
   background-blend-mode: multiply;
   background-image: linear-gradient(
