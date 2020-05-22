@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Header />
+    <Header v-if="!this.$store.state.mobView" />
+    <HeaderMob v-if="this.$store.state.mobView" />
     <keep-alive include="Home">
       <router-view />
     </keep-alive>
@@ -9,11 +10,16 @@
 
 <script>
 import Header from "./components/Header.vue";
+import HeaderMob from "./components/HeaderMob.vue";
 
 export default {
   name: "app",
   components: {
-    Header
+    Header,
+    HeaderMob
+  },
+  created() {
+    this.$store.commit("handleView");
   }
 };
 </script>

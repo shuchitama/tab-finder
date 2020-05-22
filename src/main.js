@@ -15,6 +15,7 @@ Vue.config.productionTip = false;
 const store = new Vuex.Store({
   state: {
     login: false,
+    mobView: false
   },
   mutations: {
     doLogin(state) {
@@ -23,7 +24,10 @@ const store = new Vuex.Store({
     doLogout(state) {
       state.login = false;
     },
-  },
+    handleView(state) {
+      state.mobView = window.innerWidth <= 450;
+    }
+  }
 });
 
 new Vue({

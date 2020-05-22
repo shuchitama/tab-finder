@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <Header />
-    <SideBar v-on:chords-submitted="passChordsToSongList" />
+    <SideBar v-if="!this.$store.state.mobView" v-on:chords-submitted="passChordsToSongList" />
+    <SideBarMob v-if="this.$store.state.mobView" v-on:chords-submitted="passChordsToSongList" />
     <Songlist v-bind:chordIDs="chordIDs" />
     <br />
     <Topten v-bind:topten="topten" />
@@ -11,6 +11,7 @@
 <script>
 import Songlist from "@/components/Songlist.vue";
 import SideBar from "@/components/SideBar.vue";
+import SideBarMob from "@/components/SideBarMob.vue";
 import Topten from "@/components/Topten.vue";
 
 export default {
@@ -18,12 +19,14 @@ export default {
   components: {
     Songlist,
     SideBar,
+    SideBarMob,
     Topten
   },
   data() {
     return {
       chordIDs: [],
-      topten: [2, 3, 4, 6, 9, 10, 20]
+      topten: [2, 3, 4, 6, 9, 10, 20],
+      mobileVersion: this.$store.state.mobView
     };
   },
   methods: {
