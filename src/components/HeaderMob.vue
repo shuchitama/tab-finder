@@ -11,7 +11,6 @@
       <section id="links">
         <router-link to="/">Home</router-link> |
         <router-link to="/library">Library</router-link> |
-        <router-link to="/profile">Profile</router-link> |
         <router-link to="/about">About</router-link>
       </section>
     </div>
