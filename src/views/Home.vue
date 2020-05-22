@@ -5,7 +5,8 @@
     <Songlist v-if="!this.$store.state.mobView" v-bind:chordIDs="chordIDs" />
     <SonglistMob v-if="this.$store.state.mobView" v-bind:chordIDs="chordIDs" />
     <br />
-    <Topten v-bind:topten="topten" />
+    <Topten v-if="!this.$store.state.mobView" v-bind:topten="topten" />
+    <ToptenMob v-if="this.$store.state.mobView" v-bind:topten="topten" />
   </div>
 </template>
 
@@ -15,6 +16,7 @@ import SonglistMob from "@/components/SonglistMob.vue";
 import SideBar from "@/components/SideBar.vue";
 import SideBarMob from "@/components/SideBarMob.vue";
 import Topten from "@/components/Topten.vue";
+import ToptenMob from "@/components/ToptenMob.vue";
 
 export default {
   name: "Home",
@@ -23,13 +25,13 @@ export default {
     SonglistMob,
     SideBar,
     SideBarMob,
-    Topten
+    Topten,
+    ToptenMob
   },
   data() {
     return {
       chordIDs: [],
-      topten: [2, 3, 4, 6, 9, 10, 20],
-      mobileVersion: this.$store.state.mobView
+      topten: [2, 3, 4, 6, 9, 20]
     };
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <b-card header="CHOOSE CHORDS TO GET STARTED">
+    <b-card header="CHOOSE SOME CHORDS TO GET STARTED">
       <div class="grid">
         <div v-for="chord in chords" v-bind:key="chord.id">
           <Chords v-bind:chord="chord" v-bind:selectChords="selectChords" v-on:addChord="addChord" />

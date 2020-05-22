@@ -1,7 +1,6 @@
 <template>
   <div class="songlist-container">
     <div v-if="filteredSongs.length > 0"></div>
-    <br />
     <div id="results">{{ resultCount }}</div>
     <br />
     <section class="songlist">

@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <b-card header="CHOOSE CHORDS TO GET STARTED">
+    <b-card header="CHOOSE SOME CHORDS TO GET STARTED">
       <div class="grid">
         <div v-for="chord in chords" v-bind:key="chord.id">
           <ChordsMob v-bind:chord="chord" v-bind:selectChords="selectChords" v-on:addChord="addChord" />
@@ -105,7 +105,9 @@ span {
 }
 
 .card-header {
-  font-size: 18px;
+  padding-top: 8px;
+  height: 40px;
+  font-size: 14px;
   font-family: Oswald;
   background-blend-mode: multiply;
   background-image: linear-gradient(to bottom, #7c9388, #7c9388);
