@@ -1,9 +1,12 @@
 <template>
   <div class="about">
-    <h2>CHORDS LIBRARY</h2>
+    <h2 v-if="!this.$store.state.mobView">CHORDS LIBRARY</h2>
+    <h2 id="h2mob" v-if="this.$store.state.mobView">CHORDS LIBRARY</h2>
     <h3>How to read</h3>
-    <img id="example" src="../../public/amajor.png" />
-    <img id="example" src="../../public/fmajor.png" />
+    <img id="example" src="../../public/amajor.png" v-if="!this.$store.state.mobView" />
+    <img id="examplemob" src="../../public/amajor.png" v-if="this.$store.state.mobView"/>
+    <img id="example" src="../../public/fmajor.png" v-if="!this.$store.state.mobView" />
+    <img id="examplemob" src="../../public/fmajor.png" v-if="this.$store.state.mobView" />
     <div id="grid">
       <div v-bind:key="chord.id" v-for="chord in chords">
         <img id="chord" v-bind:src="chord.url" v-bind:alt="chord.name" />
@@ -34,6 +37,12 @@ export default {
 h2 {
   background-color: #717478;
   color: #1b2530;
+}
+
+#h2mob {
+  background-color: #717478;
+  color: #1b2530;
+  font-size: 18px;
 }
 
 h3 {
@@ -67,5 +76,11 @@ h3 {
 #example {
   border: 2px solid black;
   margin: 30px;
+}
+
+#examplemob {
+  border: 2px solid black;
+  margin: 30px;
+  width: 300px;
 }
 </style>
