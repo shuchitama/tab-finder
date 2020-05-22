@@ -6,7 +6,7 @@
     <br />
     <section class="songlist">
       <div class="song" v-for="song in filteredSongs" v-bind:key="song.id">
-        <Song v-bind:song="song" v-bind:chordIDs="chordIDs" />
+        <SongMob v-bind:song="song" v-bind:chordIDs="chordIDs" />
       </div>
     </section>
   </div>
@@ -14,13 +14,13 @@
 
 <script>
 import axios from "axios";
-import Song from "./Song.vue";
+import SongMob from "./SongMob.vue";
 import _ from "lodash";
 
 export default {
   name: "Songlistmob",
   components: {
-    Song
+    SongMob
   },
   props: ["chordIDs"],
   data() {
@@ -84,7 +84,7 @@ export default {
 
 .songlist {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
   column-gap: 6px;
   row-gap: 0px;
   justify-items: center;
