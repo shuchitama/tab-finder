@@ -30,8 +30,8 @@ export default {
 .chord {
   border-radius: 4px;
   border: black;
-  width: 80px;
-  height: 40px;
+  width: 60px;
+  height: 35px;
   font-size: 18px;
   color: #878787;
   font-family: Oswald;

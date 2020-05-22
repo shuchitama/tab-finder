@@ -99,12 +99,13 @@ export default {
 .card {
   border: none;
 }
+
 span {
   opacity: 0;
 }
 
 .card-header {
-  font-size: 22px;
+  font-size: 18px;
   font-family: Oswald;
   background-blend-mode: multiply;
   background-image: linear-gradient(to bottom, #7c9388, #7c9388);
@@ -115,8 +116,8 @@ span {
   justify-content: center;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto;
-  column-gap: 20px;
-  row-gap: 20px;
+  column-gap: 10px;
+  row-gap: 10px;
 }
 
 #buttons {
