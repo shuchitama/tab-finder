@@ -4,10 +4,6 @@ This app allows a guitar learner to search songs to play based on the chords the
 
 This project was created and published by me and [Mariana](https://github.com/maridoh13) as part of our learnings at Lighthouse Labs.
 
-## Visit the app
-
-http://tab-finder.herokuapp.com/
-
 ## Screenshots
 
 ### Searching for songs
